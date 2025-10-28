@@ -26,3 +26,5 @@ How to Update & Work on the Project :
 2. git add .
 3. git commit -m "Whatevery you want for the name"
 4. git push
+
+simple notes, please contact me on what you want to add alright? :)
