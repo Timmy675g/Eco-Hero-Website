@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    max-width: 650px;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 85px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.hero-text p {
+    font-family: "Public Sans Web", sans-serif;
+    color: lightgray;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    max-width: 550px;
+    margin-top: 15px;
+    line-height: 1;
+}
