@@ -20,11 +20,12 @@ Make sure you have installed:
 
 ```bash
 git clone https://github.com/Timmy675g/Eco-Hero-Website.git
-
 How to Update & Work on the Project :
 1. git pull
-2. git add .
-3. git commit -m "Whatevery you want for the name"
-4. git push
+2. git fetch
+3. git merge
+4. git add .
+5. git commit -m "Whatevery you want for the name"
+6. git push
 
 simple notes, please contact me on what you want to add alright? :)
