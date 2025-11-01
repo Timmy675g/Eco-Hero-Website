@@ -1,113 +1,269 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 12%;
+    left: 6%;
+    color: white;
+    max-width: 700px;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+}
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 90px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 24px;
+}
+
+.hero-text p {
+    font-family: 'Inter', sans-serif;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    max-width: 540px;
+    line-height: 1.6;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 32px;
+}
+
+.scroll-button {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.scroll-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-button:active {
+    transform: translateY(0);
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    min-height: 100vh;
+    padding: 100px 80px;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
+    color: white;
+}
+
+.climate-text {
+    flex: 1.2;
+    animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.climate-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.climate-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.climate-image img:hover {
+    transform: scale(1.02);
+}
+
+.climate-image p {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.content-section h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: #4ade80;
+    background-clip: text;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-        }
+.content-section p {
+    font-size: 15.8px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+}
 
-        .hero {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-        }
+.faq {
+    min-height: 100vh;
+    padding: 100px 80px;
+    background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.2) 100%);
-            z-index: 1;
-        }
+.faq-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-        .hero-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
+.faq-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
 
-        .hero-text {
-            position: absolute;
-            bottom: 12%;
-            left: 6%;
-            color: white;
-            max-width: 700px;
-            z-index: 2;
-        }
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        .hero-text h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: 92px;
-            font-weight: 800;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-            margin-bottom: 24px;
-        }
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
 
-        .hero-text p {
-            font-family: 'Inter', sans-serif;
-            color: rgba(255, 255, 255, 0.92);
-            font-size: 19px;
-            font-weight: 400;
-            letter-spacing: 0.01em;
-            max-width: 540px;
-            line-height: 1.6;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-            margin-bottom: 32px;
-        }
+.faq-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
 
-        .scroll-button {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            padding: 16px 40px;
-            font-size: 16px;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            letter-spacing: 0.5px;
-        }
+.question {
+    padding: 24px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
 
-        .scroll-button:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
+.question::after {
+    content: '+';
+    font-size: 28px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    color: #4ade80;
+}
 
-        .scroll-button:active {
-            transform: translateY(0);
-        }
+.faq-item.active .question::after {
+    transform: rotate(45deg);
+}
 
-        .content-section {
-            min-height: 100vh;
-            padding: 80px 6%;
-            background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
-            color: white;
-        }
+.answer-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
 
-        .content-section h2 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            color: #4ade80;
-        }
+.faq-item.active .answer-container {
+    max-height: 300px;
+    padding: 0 28px 24px 28px;
+}
 
-        .content-section p {
-            font-size: 18px;
-            line-height: 1.8;
-            max-width: 800px;
-            color: rgba(255, 255, 255, 0.85);
-        }
+.answer {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+}
