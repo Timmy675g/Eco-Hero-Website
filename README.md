@@ -13,7 +13,7 @@ Make sure you have installed:
 
 ---
 
-## 📥 How to Download the Project (First Time Only)
+## 📥 How to Download the Project (First Time Only) and Contributor :
 1️⃣ Open any folder on your laptop  
 2️⃣ Right-click → "Open in Terminal" (or use VS Code Terminal)  
 3️⃣ Run this command:
@@ -28,4 +28,5 @@ How to Update & Work on the Project :
 5. git commit -m "Whatevery you want for the name"
 6. git push
 
-simple notes, please contact me on what you want to add alright? :)
+simple notes, please contact me on what you want to add alright? :) ( For Contributors )
+- Dearest Timmy :)
