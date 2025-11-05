@@ -1,4 +1,4 @@
-* {
+* {  /*basically the whole html ( i mean it, universal ) for css ( for index.html ) */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -23,7 +23,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.2) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.15) 60%, rgba(0, 0, 0, 0.05) 100%);
     z-index: 1;
 }
 
@@ -164,7 +164,7 @@ body {
     gap: 60px;
     min-height: 100vh;
     padding: 100px 80px;
-    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
+    background: #d3d3d3;
     color: white;
 }
 
@@ -229,15 +229,107 @@ body {
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 24px;
-    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
-    color: #4ade80;
+    background: #111111;
+    color: #111111;
     background-clip: text;
-        }
+}
 
 .content-section p {
     font-size: 15.8px;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.85);
+    color: #111111;
+}
+
+.mini-games {
+    min-height: 80vh;
+    padding: 100px 80px;
+    background: #0f4c5c;
+}
+
+.games-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.games-header h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    background: #f1c40f;
+    color: #f1c40f;
+    background-clip: text;
+}
+
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-card {
+    background: #1abc9c;
+    border: 1px solid #16a085;
+    border-radius: 16px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.game-card:hover {
+    background: #48c9b0;
+    border-color: rgba(74, 222, 128, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(74, 222, 128, 0.15);
+}
+
+.game-card h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+.game-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+.quiz-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(74, 222, 128, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.quiz-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(74, 222, 128, 0.4);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.quiz-btn:active {
+    transform: translateY(0);
 }
 
 .faq {
@@ -322,12 +414,20 @@ body {
 }
 
 .footer {
+  position: relative;
+  overflow: hidden;
   display: flex;
-  justify-content: space-between; 
-  align-items: flex-start; 
+  flex-direction: column; 
   padding: 40px 60px;
   background-color: #000;
   color: white;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .footer-content {
@@ -339,7 +439,7 @@ body {
 }
 
 .footer-logo {
-  width: 90px;
+  width: 100px;
   height: auto;
   object-fit: contain;
   margin-left: 20px;
@@ -355,6 +455,11 @@ body {
   margin-left: 20px;
 }
 
+.footer h4 {
+  font-family: 'Inter', sans-serif;
+  margin-left: 20px;
+}
+
 .footer-team {
   display: flex;
   flex-direction: column;
@@ -365,8 +470,9 @@ body {
 
 .team-member {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 6px; 
 }
 
 .team-photo {
@@ -382,4 +488,64 @@ body {
   font-size: 14px;
   color: #ddd;
   text-align: right;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px; 
+}
+
+.name {
+  font-size: 15px;
+  color: #ddd;
+  font-weight: 500;
+}
+
+.social-links {
+  display: flex; 
+  flex-direction: row; 
+  gap: 10px; 
+  margin-top: 4px;
+}
+
+.social-links a {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  text-decoration: none;
+  color: #4ade80;
+  font-size: 14px;
+  gap: 4px; /*gap to verstappen is 20 second ;] */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #22c55e;
+  transform: scale(1.05);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: middle;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(14%) saturate(871%) hue-rotate(74deg) brightness(97%) contrast(89%);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  display: grid;
+  margin-left: 20px;
+}
+
+footer ul li a {
+  color: #fff;
+  text-decoration: underline;
 }

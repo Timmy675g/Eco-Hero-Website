@@ -1,55 +1,61 @@
-const faqItems = document.querySelectorAll('.faq-item');
-
+// idk i think i might tweak scroll later if navbar overlaps content
 function scrollToContent() {
-    const contentSection = document.getElementById('content');
-    if (contentSection) {
-        contentSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
+  const content = document.getElementById('content');
+  if (!content) return;
+  
+  content.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
 }
 
-faqItems.forEach(faq => {
-    const question = faq.querySelector('.question');
+// handle FAQ open/close
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach((item) => {
+  const q = item.querySelector('.question');
+  
+  q.addEventListener('click', () => {
+    const open = item.classList.contains('active');
 
-    question.addEventListener('click', () => {
-        const isOpen = faq.classList.contains('active');
+    // close all first
+    faqItems.forEach(i => i.classList.remove('active'));
 
-        faqItems.forEach(item => item.classList.remove('active'));
-
-        if (!isOpen) {
-            faq.classList.add('active');
-        }
-    });
+    // then open the clicked one if it wasn’t already
+    if (!open) item.classList.add('active');
+  });
 });
 
-const fadeInObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, {
-    threshold: 0.1, 
-    rootMargin: '0px 0px -100px 0px' 
+// fade-in animation when scrolling into view
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = 1;
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { 
+  threshold: 0.12,
+  rootMargin: '0px 0px -80px 0px' // was -100px; quite stiff? idk
 });
 
-faqItems.forEach(faq => {
-    faq.style.opacity = '0';
-    faq.style.transform = 'translateY(20px)';
-    faq.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    fadeInObserver.observe(faq);
+// init fade-in styles
+faqItems.forEach(f => {
+  f.style.opacity = 0;
+  f.style.transform = 'translateY(18px)';
+  f.style.transition = 'opacity .6s ease, transform .62s ease';
+  fadeObserver.observe(f);
 });
 
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  const heroHeight = document.querySelector('.hero').offsetHeight;
+// show navbar after hero scroll
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.navbar');
+  const hero = document.querySelector('.hero');
+  if (!hero || !nav) return;
 
-  if (window.scrollY > heroHeight - 100) {
-    navbar.classList.add('show');
+  const heroHeight = hero.offsetHeight;
+  if (window.scrollY > heroHeight - 120) {
+    nav.classList.add('show');
   } else {
-    navbar.classList.remove('show');
+    nav.classList.remove('show');
   }
 });
