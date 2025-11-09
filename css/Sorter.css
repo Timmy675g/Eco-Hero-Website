@@ -197,7 +197,6 @@ h1 {
 
 }
 
-
 #anorganic::after , #anorganic::before {
     content:"";
     position: absolute;
@@ -215,8 +214,6 @@ h1 {
     opacity: 0.5;
 
 }
-
-
 
 @keyframes spin{
     from{
