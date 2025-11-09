@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+/* btw i recommend using number font-weight instead of bold for more control on text thickness thin till extra bold*/
+
 * {  /*basically the whole html ( i mean it, universal ) for css ( for index.html ) */
     margin: 0;
     padding: 0;
@@ -5,7 +8,7 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     overflow-x: hidden;
 }
 
@@ -56,7 +59,8 @@ body {
 }
 
 .hero-text h1 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     font-size: 90px;
     font-weight: 800;
     line-height: 0.95;
@@ -66,7 +70,7 @@ body {
 }
 
 .hero-text p {
-    font-family: "Public Sans Web", sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     color: rgba(255, 255, 255, 0.92);
     font-size: 19px;
     font-weight: 400;
@@ -85,7 +89,7 @@ body {
     padding: 16px 40px;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -273,8 +277,9 @@ body {
 }
 
 .content-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     font-size: 48px;
-    font-weight: 800;
     margin-bottom: 24px;
     background: #111111;
     color: #111111;
@@ -299,9 +304,9 @@ body {
 }
 
 .games-header h1 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     font-size: 56px;
-    font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.02em;
     background: #f1c40f;
@@ -338,7 +343,7 @@ body {
 }
 
 .game-card h2 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: black;
@@ -360,7 +365,7 @@ body {
     background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
     color: white;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     font-size: 16px;
     font-weight: 600;
     border-radius: 50px;
@@ -391,9 +396,9 @@ body {
 }
 
 .faq-header h1 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     font-size: 56px;
-    font-weight: 800;
     line-height: 1.2;
     letter-spacing: -0.01em;
     color: white;
@@ -494,16 +499,17 @@ body {
 
 .footer-header {
   margin-left: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;;
 }
 
 .footer p {
-  font-family: "Public Sans Web", sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   margin-left: 20px;
 }
 
 .footer h4 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   margin-left: 20px;
 }
 
