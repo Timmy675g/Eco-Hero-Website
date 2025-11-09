@@ -1,0 +1,230 @@
+ body , html {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-image: url('../Assets/images/forest1.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: medium;
+
+}
+
+p {
+    color:white;
+
+}
+
+h1 {
+    margin-top: 0.1rem;
+    position: relative;
+    font-size: 42px;
+    text-align: center;
+    font-weight: 400;
+    color:white;
+}
+
+#things {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    flex-wrap: wrap;
+} 
+
+.things {
+    cursor:grab;
+    display:flex;
+    font-size: 44px;
+    border: 1px solid white;
+    background-color:rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    width:80px;
+    height:80px;
+    justify-content: center;
+    align-items: center;
+    cursor:grab;
+    margin:10px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.018);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.things:active {
+    cursor:grabbing;
+    transform: scale(0.85);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+#allbin {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 40px;
+    width:740px;
+    height: 260px;
+    border-radius: 15px;
+    padding:20px;
+    margin: 0 auto;
+}
+
+#bigdiv{
+    background-color: rgba(255, 255, 255, 0.025);
+    width:780px;
+    height:max-content;
+    border-radius: 15px;
+    padding:20px;
+    box-sizing: content-box;
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+}
+
+#currentscore , #wrtext {
+    margin: 12px;
+    font-size: 24px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#area1 {
+    border: 1px solid rgba(255, 255, 255, 0.327);
+    border-radius: 15px;
+}
+
+.bin {
+    width: 150px;
+    height:200px;
+    border: none;
+    border-radius: 12px;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    text-align:center;
+    padding:2rem; 
+    box-sizing: border-box; 
+    position:relative;
+
+}
+
+.btm-bin {
+    height:160px;
+    padding:2rem;
+    width: 150px;
+    box-sizing: border-box;
+}
+
+
+.bi {
+    height:80px;
+    padding: 20px 10px;
+}
+
+#btr::after{
+    content:"";
+    position: absolute;
+    background-image:linear-gradient(to top left,#00a9ff,#00bfff,#00d4ff,#00ffff);
+    width:150px;
+    height:160px;
+    z-index: 0;
+    padding:3px;
+    translate: -50% -89%;
+    border-radius: 12px;
+    animation: 2s spin linear infinite;
+    filter:blur(0.3em)
+}
+
+#bto::after{
+    content:"";
+    position: absolute;
+    background-image:linear-gradient(to top left,#f3f520,#c0e916,#8cdd0c,#59d102);
+    width:150px;
+    height:160px;
+    z-index: 0;
+    padding:3px;
+    translate: -50% -89%;
+    border-radius: 12px;
+    animation: 2s spin linear infinite;
+    filter: blur(0.3em);
+}
+
+#bta::after{
+    content:"";
+    position: absolute;
+    background-image:linear-gradient(to top left,#ff0000,#ff5a00,#ff9a00,#ffe808);
+    width:150px;
+    height:160px;
+    z-index: 0;
+    padding:3px;
+    translate: -50% -89%;
+    border-radius: 12px;
+    animation: 2s spin linear infinite;
+    filter: blur(0.3em);
+}
+
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#recycleables::after , #recycleables::before {
+    content:"";
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-image: conic-gradient(from var(--angle),#00a9ff,#00bfff,#00d4ff,#00ffff,#00a9ff);
+    z-index: -1;
+    padding:3px;
+    border-radius: 12px;
+    animation: 2s spin linear infinite;
+    
+}
+
+#organic::after , #organic::before {
+    content:"";
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-image: conic-gradient(from var(--angle),#f3f520,#c0e916,#8cdd0c,#59d102, #f3f520);
+    z-index: -1;
+    padding:3px;
+    border-radius: 12px;
+    animation: 2s spin linear infinite;
+
+}
+
+
+#anorganic::after , #anorganic::before {
+    content:"";
+    position: absolute;
+    height:100%;
+    width:100%;
+    background-image: conic-gradient(from var(--angle),#ff0000,#ff5a00,#ff9a00,#ffe808,#ff0000);
+    z-index: -1;
+    padding:3px;
+    border-radius: 12px;
+    animation: 2s spin linear infinite;
+}
+
+#anorganic::before , #organic::before, #recycleables::before {
+    filter: blur(2rem);
+    opacity: 0.5;
+
+}
+
+
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+
+    to{
+        --angle:360deg;
+    }
+
+}

@@ -1,7 +1,7 @@
 // idk i think i might tweak scroll later if navbar overlaps content
 function scrollToContent() {
   const content = document.getElementById('content');
-  if (!content) return;
+  if (!content) return; //if theres no value / content just stay idle 
   
   content.scrollIntoView({
     behavior: 'smooth',
@@ -20,27 +20,24 @@ faqItems.forEach((item) => {
     // close all first
     faqItems.forEach(i => i.classList.remove('active'));
 
-    // then open the clicked one if it wasn’t already
+    // then open the clicked one if it wasn't already
     if (!open) item.classList.add('active');
   });
 });
 
-// fade-in animation when scrolling into view
+// fade in animation when scrolling into view
 const fadeObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      e.target.style.opacity = 1;
+      e.target.style.opacity = 1; // e is for entry or event or whatever you call it ig
       e.target.style.transform = 'translateY(0)';
     }
   });
-}, { 
-  threshold: 0.12,
-  rootMargin: '0px 0px -80px 0px' // was -100px; quite stiff? idk
 });
 
-// init fade-in styles
+// init fade in styles
 faqItems.forEach(f => {
-  f.style.opacity = 0;
+  f.style.opacity = 0; // f is for fade, could be frame but uhh f is fade, variable names :]
   f.style.transform = 'translateY(18px)';
   f.style.transition = 'opacity .6s ease, transform .62s ease';
   fadeObserver.observe(f);
@@ -50,7 +47,7 @@ faqItems.forEach(f => {
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('.navbar');
   const hero = document.querySelector('.hero');
-  if (!hero || !nav) return;
+  if (!hero || !nav) return; // no hero? no nav? stop ;]
 
   const heroHeight = hero.offsetHeight;
   if (window.scrollY > heroHeight - 120) {

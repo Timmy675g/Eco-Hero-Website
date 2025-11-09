@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trash sorter game</title>
+        <link rel="icon" href="../Assets/icons/Favicon.png">
+        <link rel="stylesheet" href="../css/Sorter.css">
+    </head> 
+    <body>
+        <div id="bigdiv">
+            <h1>Trash Sorter Game</h1>
+            <p>Drag each item to the correct bin :D!</p>
+            <div id="area1">
+                <div id="allbin">
+                    <div class="bin" id="recycleables" ondrop="drop(event)" ondragover="drop2(event)">
+                        Recycleables
+                        <div class="btm-bin" id="btr">
+                            <div class="Bi">
+                                <img src="../Assets/images/recycle.png" style="position: relative; z-index: 1;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bin" id="organic" ondrop="drop(event)" ondragover="drop2(event)">
+                        Organic
+                        <div class="btm-bin" id="bto">
+                            <div class="Bi">
+                                <img src="../Assets/images/organic.png" style="position: relative; z-index: 1;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bin" id="anorganic" ondrop="drop(event)" ondragover="drop2(event)">
+                        Anorganic
+                        <div class="btm-bin" id="bta">
+                            <div class="Bi">
+                                <img src="../Assets/images/plastic.png" style="position: relative; z-index: 1;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Infopanel1">
+                    <div id="things"></div>
+                    <div id="currentScore">Score : 0</div>
+                    <div id="wrtext"></div>
+                </div>
+            </div>
+        </div>
+        <script src="../js/Sorter.js"></script>
+    </body>
+</html>
