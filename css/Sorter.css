@@ -225,3 +225,29 @@ h1 {
     }
 
 }
+
+
+button {
+    width: 30%;
+    padding: 12px 24px;
+    box-sizing: border-box;
+    background-color: black;
+    margin: 10px auto;
+    border: none;
+    color:azure;
+    border-radius:18px;
+    transition: 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button:hover {
+    transform: scale(1.02);
+    background-color:#343a40;
+
+}
+
+button:active {
+    transform: scale(1.07);
+    border-radius: 22px;
+    background-color: #495057;
+
+}
