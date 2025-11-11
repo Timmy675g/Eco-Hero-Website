@@ -1,18 +1,43 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Carbon Footprint Calculator</title>
-    <link rel="icon" href="../Assets/icons/Favicon.png"
-</head>
-<link rel="stylesheet" href="../css/calculator.css"
-<body>
-    <div class="container">
-        <h2>Carbon Footprint Calculator</h2>
-
-        <label for="vehicle">Vehicle Type</label>
-        <select id="vehicle">
-            
-        </select>
-    </div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carbon calculator</title>
+        <link rel="stylesheet" href="../css/Calculator.css">
+    </head>
+    <body>
+        <div id="Glassy">
+            <div id="calc">
+                <button id="backbtn" onclick="window.location.href='../index.html';">Back</button>
+                <h1> Carbon Emission Calculator</h1>
+                <label for="fuel">Fuel types</label>
+                <select id="fuel" onchange="UpdateUnit()">
+                    <option value="Petrol">Gasoline / Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="lpg">LPG</option>
+                    <option value="e10">E10 (Gasoline/Petrol + 10% Ethanol)</option>
+                    <option value="e85">E85 (Gasoline/Petrol + 85% Ethanol)</option>
+                    <option value="bdiesel">Biodiesel</option>
+                    <option value="bgas">Bio Gasoline / Petrol</option>
+                    <option value="ev">Electric</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="F-E" id="L_efficiency">Avg Fuel efficiency </label>
+                <div class="elabel1">
+                    <input type="number" id="F_E" placeholder="ex. 12">
+                    <span id="fueltype">Km/L</span>
+                </div>
+                <label for="dist">Distance Travelled using vehicle </label>
+                <div class="elabel1">
+                    <input type="number" id="dist" placeholder="ex. 150">
+                    <span id="distance">Km</span>
+                </div>
+                <button onclick="calc1()">Calculate</button>
+                <div id="res1"></div>
+            </div>
+        </div>
+        <footer>*the calculator result is approximate, result may differ by car and local power grid situations</footer>
+        <script src="../js/Calculator.js"></script>
+    </body>
 </html>
