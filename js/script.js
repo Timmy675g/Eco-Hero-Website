@@ -1,12 +1,73 @@
+let emission = 0;
+const target = 42.2; //target number for avg Co2 Emissions as of 2025, probably change it when its 2026
+const text = document.getElementById('emission');
+
+const timer = setInterval(() => {
+  emission += 0.2; //yay animation :D
+  text.textContent = emission.toFixed(1);
+  if (emission >= target) clearInterval(timer);
+  text.textContent = emission.toFixed(1);
+}, 40);
+
 // idk i think i might tweak scroll later if navbar overlaps content
 function scrollToContent() {
-  const content = document.getElementById('content');
+  const content = document.getElementById('about');
   if (!content) return; //if theres no value / content just stay idle 
   
   content.scrollIntoView({
     behavior: 'smooth',
     block: 'start'
   });
+}
+
+// Update nav button visibility based on scroll position
+function updateNavButtons() {
+  const slider = document.querySelector('.stats-slider');
+  const leftBtn = document.querySelector('.stat-nav.left');
+  const rightBtn = document.querySelector('.stat-nav.right');
+  
+  if (!slider || !leftBtn || !rightBtn) return;
+  
+  const scrollLeft = slider.scrollLeft;
+  const maxScroll = slider.scrollWidth - slider.clientWidth;
+  
+  // Hide left button if at start (no more content on the left)
+  if (scrollLeft <= 5) {
+    leftBtn.style.opacity = '0';
+    leftBtn.style.pointerEvents = 'none';
+  } else {
+    leftBtn.style.opacity = '1';
+    leftBtn.style.pointerEvents = 'all';
+  }
+  
+  // Hide right button if at end (no more content on the right)
+  if (scrollLeft >= maxScroll - 5) {
+    rightBtn.style.opacity = '0';
+    rightBtn.style.pointerEvents = 'none';
+  } else {
+    rightBtn.style.opacity = '1';
+    rightBtn.style.pointerEvents = 'all';
+  }
+}
+
+function scrollStats(direction) {
+  const slider = document.querySelector('.stats-slider');
+  const scrollAmount = 300; //basically if you click > = right < = left just like - + but in px 
+  slider.scrollBy({
+    left: direction * scrollAmount, // yea, still the same, direction ( left - , right + ) x 300 
+    behavior: 'smooth'
+  });
+  
+  // Update buttons after scroll animation finishes
+  setTimeout(updateNavButtons, 350);
+}
+
+// Listen for scroll events on the slider to update button visibility
+const slider = document.querySelector('.stats-slider');
+if (slider) {
+  slider.addEventListener('scroll', updateNavButtons);
+  // Initial check on page load
+  updateNavButtons();
 }
 
 // handle FAQ open/close
@@ -47,7 +108,7 @@ faqItems.forEach(f => {
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('.navbar');
   const hero = document.querySelector('.hero');
-  if (!hero || !nav) return; // no hero? no nav? stop ;]
+  if (!hero || !nav) return;
 
   const heroHeight = hero.offsetHeight;
   if (window.scrollY > heroHeight - 120) {

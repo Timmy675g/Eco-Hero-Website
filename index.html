@@ -8,18 +8,73 @@
   </head>
   <body>
 
+  <!-- Hero Section -->
   <section class="hero">
-      <img src="Assets/images/climate.png" class="hero-img" alt="Earth Image">
+    <img src="Assets/images/climate.png" class="hero-img" alt="Earth Image">
 
-      <div class="hero-text">
-          <h1>Be An <br>
-              Eco Hero</h1>
-          <p>Let's find out more about Climate Change <br>
-          And learn on how to combat it! </p>
-          <button class="scroll-button" onclick="scrollToContent()">Learn More</button>
-      </div>
+    <div class="hero-text">
+        <h1>Be An <br> Eco Hero!</h1>
+        <p>Let's find out more about Climate Change <br>
+        And learn on how to combat it!</p>
+        <button class="scroll-button" onclick="scrollToContent()">Learn More</button>
+    </div>
   </section>
 
+  <!-- Climate Stats Section -->
+  <section class="climate-stats-bar">
+    <button class="stat-nav left" onclick="scrollStats(-1)">‹</button>
+    
+    <div class="stats-slider">
+      <div class="stat-item">
+        <h3>Carbon Dioxide</h3>
+        <div class="stat-value">
+          <span class="arrow up">↑</span>
+          <span class="number" id="emission">0</span>
+          <span class="unit"> GtCO&#8322;</span> <!--; is just incase of the GtCO&#8322 showing the code -->
+        </div>
+        <p class="stat-label">Total global CO&#8322; emissions in 2025</p> <!--Same example as the top ones-->
+        <a href="https://www.carbonbrief.org/analysis-fossil-fuel-co2-emissions-to-set-new-record-in-2025-as-land-sink-recovers/" target="_blank" class="source-link">Source: CarbonBrief</a>
+      </div>
+
+      <div class="stat-item"> 
+        <h3>Global Temperature</h3>
+        <div class="stat-value">
+          <span class="arrow up">↑</span>
+          <span class="number">1.4</span> <!--Not rlly 1.5, since it only got 10% chances to hit 1.5 so 1.4 i think is a safe limit-->
+          <span class="unit">°C</span>
+        </div>
+        <p class="stat-label">Global Temperature Rise Since Pre-Industrial Era <br>
+          ( Late 1800s )</p>
+        <a href="https://www.carbonbrief.org/state-of-the-climate-2025-on-track-to-be-second-or-third-warmest-year-on-record/" target="_blank" class="source-link">Source: CarbonBrief</a>
+      </div>
+
+      <div class="stat-item">
+        <h3>Global Sea Level</h3>
+        <div class="stat-value">
+          <span class="arrow up">↑</span>
+          <span class="number">9</span>
+          <span class="unit">Cm</span>
+        </div>
+        <p class="stat-label">Total rising global sea level since 1993</p>
+        <a href="https://science.nasa.gov/earth/explore/earth-indicators/sea-leve/" target="_blank" class="source-link">Source: Nasa</a>
+      </div>
+
+      <div class="stat-item">
+        <h3>Snow Coverage</h3>
+        <div class="stat-value">
+          <span class="arrow down">↓</span>
+          <span class="number">2.37</span>
+          <span class="unit">Milion km&#178;</span>
+        </div>
+        <p class="stat-label">Snow Coverage in Northern Hemisphere ( Snow Lab )</p> <!--Northern Hemisphere basically a place where scientist can study snow in 1 area that like resembles the whole world  -->
+        <a href="https://www.climate.gov/news-features/understanding-climate/climate-change-spring-snow-cover-northern-hemisphere" target="_blank" class="source-link">Source: NOAA</a>
+      </div>
+    </div>
+    
+    <button class="stat-nav right" onclick="scrollStats(1)">›</button>
+  </section>
+
+  <!-- Navbar ( Horizontal ofc ) -->
   <nav class="navbar">
     <div class="logo">
       <img src="Assets/icons/Favicon.png" alt="Logo">
@@ -33,20 +88,30 @@
     </ul>
   </nav>
 
+  <!-- About Us -->
   <section class="about-section" id="about">
     <div class="about-text">
       <h2>About Us</h2>
-      <p>Tarki Climate team are a team that focuses on trying to solve climate change <br>
+      <p>Tarki Climate Developers is a team of developers dedicated to educating people on climate change through a campaign <br> 
+        called <b>"Eco Heroes: Rise For Climate Action"</b> and a website themed around climate change, also titled <b>"Be An Eco Hero!"</b>. <br>
+        We highlight the problems of climate change and show ways to solve them. We even created several interactive games for people to learn how to solve different climate change challenges. <br>
+        By collaborating and working together, we can solve climate change together as a team!
       </p>
+    </div>
+
+    <div class="about-image">
+      <img class="team-logo" src="Assets/icons/Favicon.png" alt="Our Team Logo">
+      <p>Tarki Climate Developers Logo</p> <!-- Fun Fact: I made the "Tarki Climate Developers" logo myself while searching features, our team exists only as me and my one teammate! -->
     </div>
   </section>
 
+  <!-- Should be Explanation page.. -->
   <section class="content-section" id="content">
     <div class="climate-text">
       <h2>Understand Climate Change!</h2>
       <p>
         Climate Change refers to long term shifts in rising temperatures and weather patterns. <br> 
-        Such shifts can be natural, due to changes in the sun’s activity or large volcanic eruptions. <br>
+        Such shifts can be natural, due to changes in the sun's activity or large volcanic eruptions. <br>
         But since the 1800s, <b>Human Activities</b> have been the main driver of climate change, 
         primarily due to the burning of fossil fuels like coal, oil, and gas. <br>
         So it's no surprise that climate change has been an issue since the 1800s.<br>
@@ -55,11 +120,12 @@
     </div>
 
     <div class="climate-image">
-      <img class="after-before" src="../Assets/images/glacier.png" alt="Glacier difference 1921 vs 2009">
+      <img class="after-before" src="Assets/images/glacier.png" alt="Glacier difference 1921 vs 2009">
       <p>Glacier Comparison : 1921 vs 2009</p>
     </div>
   </section>
 
+  <!-- Mini Games Section!!! -->
   <section class="mini-games" id="games">
     <div class="games-header">
       <h1>Let's test your Climate Change knowledge!</h1>
@@ -86,6 +152,7 @@
     </div>
   </section>
 
+  <!-- FAQ or Fruquently Asked Question if you dont know-->
   <section class="faq" id="faquestion">
       <div class="faq-header">
           <h1>Frequently Asked Questions<br>Climate Change</h1>
@@ -137,6 +204,7 @@
       </div>
   </section>
 
+  <!-- Footer Section, wait where's the section? oh..<footer> -->
   <footer class="footer">
     <div class="footer-wrapper">
       <div class="footer-content">
@@ -189,7 +257,7 @@
     </div>
   </footer>
 
-  <script src="/js/script.js"></script>
+  <script src="js/script.js"></script>
 
   </body>
 </html>
