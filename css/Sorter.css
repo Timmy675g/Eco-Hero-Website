@@ -1,4 +1,6 @@
- body , html {
+/*unable too fully optimized it to mobile, ill try my best*/
+
+body , html {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     background-image: url('../Assets/images/forest1.jpg');

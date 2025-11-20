@@ -18,6 +18,9 @@ Make sure you have installed:
 2️⃣ Right-click → "Open in Terminal" (or use VS Code Terminal)  
 3️⃣ Run this command:
 
+## Notice! 
+Some notes are scattered in css folder! some is used for CSS Tips and how the code works, gotta have a documenting notes and stuff you know :]
+
 ```bash
 git clone https://github.com/Timmy675g/Eco-Hero-Website.git
 How to Update & Work on the Project :
@@ -28,5 +31,6 @@ How to Update & Work on the Project :
 5. git commit -m "Whatevery you want for the name"
 6. git push
 
-simple notes, please contact me on what you want to add alright? :) ( For Contributors )
+simple notes, please contact me on what you want to add alright? :) 
+( For Contributors )
 - Dearest Timmy :)

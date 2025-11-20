@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
 /* btw i recommend using number font-weight instead of bold for more control on text thickness thin till extra bold*/
 /* friendly reminder : :active is when a user clicked it does something, :focus is basically when user presses tab*/
+/* Notes on vh and vw is on quiz.css */
 * {  /*basically the whole html ( i mean it, universal ) for css ( for index.html ) */
     margin: 0;
     padding: 0;
@@ -21,7 +22,6 @@ body {
 }
 
 .hero::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -155,7 +155,7 @@ body {
 }
 
 .stat-item h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -192,14 +192,14 @@ body {
 }
 
 .number {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 3rem;
   font-weight: 800;
   line-height: 1;
 }
 
 .stat-label { /*p*/
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size: 0.9rem;
   color: #aaa;
   margin: 0;
@@ -342,8 +342,9 @@ body {
 }
 
 .logo:hover img {
-  border-color: #00ffff;
-  transform: rotate(360deg);
+  border-color: #36C75F;
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 /*About section*/
@@ -532,8 +533,8 @@ body {
     font-size: 56px;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    background: #f1c40f;
-    color: #f1c40f;
+    background: #2E8031;
+    color: #36C75F;
     background-clip: text;
 }
 
@@ -625,7 +626,7 @@ body {
     font-size: 56px;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    color: white;
+    color: #36C75F;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -720,6 +721,11 @@ body {
   height: auto;
   object-fit: contain;
   margin-left: 20px;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .footer-header {
