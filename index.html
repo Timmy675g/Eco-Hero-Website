@@ -16,7 +16,7 @@
         <h1>Be An <br> Eco Hero!</h1>
         <p>Ayo cari tahu lebih banyak tentang perubahan iklim<br>
         dan cara melawannya!</p>
-        <button class="scroll-button" onclick="scrollToContent()">Mulai Jelajahi</button>
+        <button class="scroll-button" onclick="scrollToContent('about', event)">Mulai Jelajahi</button>
     </div>
   </section>
 
@@ -82,10 +82,10 @@
       <span>Be An Eco Hero!</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#content">Introduction</a></li>
-      <li><a href="#games">Mini Games</a></li>
-      <li><a href="#faquestion">FAQ</a></li>
+      <li><a href="#about" onclick="scrollToContent('about',event)">About</a></li>
+      <li><a href="#content" onclick="scrollToContent('content',event)">Introduction</a></li>
+      <li><a href="#games" onclick="scrollToContent('games',event)">Mini Games</a></li>
+      <li><a href="#faquestion" onclick="scrollToContent('faquestion',event)">FAQ</a></li>
     </ul>
   </nav>
 
@@ -157,7 +157,7 @@
   <!-- FAQ or Fruquently Asked Question if you dont know-->
   <section class="faq" id="faquestion">
       <div class="faq-header">
-          <h1>Frequently Asked Questions<br>Climate Change</h1>
+          <h1>Frequently Asked Questions<br>Perubahan Iklim</h1>
       </div>
 
       <div class="faq-container">

@@ -10,13 +10,15 @@ const timer = setInterval(() => {
 }, 40);
 
 // idk i think i might tweak scroll later if navbar overlaps content
-function scrollToContent() {
-  const content = document.getElementById('about');
-  if (!content) return; //if theres no value / content just stay idle 
-  
-  content.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
+function scrollToContent(id, event) {
+  if (event) event.preventDefault();
+
+  const section = document.getElementById(id);
+  if (!section) return;
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
   });
 }
 

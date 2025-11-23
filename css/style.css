@@ -137,17 +137,19 @@ body {
 
 .stats-slider {
   display: flex;
-  gap: 3rem;
+  align-items: stretch;
+  gap: 2rem;
   overflow-x: auto;
   overflow-y: hidden;  
   scroll-behavior: smooth;
   scrollbar-width: none;
-  -ms-overflow-style: none;
   flex: 1;
   padding: 0.5rem 0;
 }
 
 .stat-item {
+  display: flex;
+  flex-direction: column;
   min-width: 280px;
   text-align: left;
   border-left: 2px solid #444;
@@ -238,7 +240,7 @@ body {
   font-size: 0.85em;
   color: #66ccff;
   text-decoration: none;
-  margin-top: 4px;
+  margin-top: auto;
 }
 
 .source-link:hover {
@@ -357,6 +359,8 @@ body {
     padding: 100px 80px;
     background: white;
 }
+
+
 
 .about-text {
     flex: 1.2;
