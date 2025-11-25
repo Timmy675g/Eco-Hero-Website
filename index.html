@@ -9,7 +9,7 @@
   <body>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="hero"> 
     <img src="Assets/images/climate.png" class="hero-img" alt="Earth Image">
 
     <div class="hero-text">
@@ -78,13 +78,13 @@
   <!-- Navbar ( Horizontal ofc ) -->
   <nav class="navbar">
     <div class="logo">
-      <img src="Assets/icons/Favicon.png" alt="Logo">
+      <img src="Assets/icons/Favicon.png" class="logo" onclick="scrollToContent('hero', event)">
       <span>Be An Eco Hero!</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#about" onclick="scrollToContent('about',event)">About</a></li>
-      <li><a href="#content" onclick="scrollToContent('content',event)">Introduction</a></li>
-      <li><a href="#games" onclick="scrollToContent('games',event)">Mini Games</a></li>
+      <li><a href="#about" onclick="scrollToContent('about',event)">TENTANG</a></li>
+      <li><a href="#content" onclick="scrollToContent('content',event)">PERKENALAN</a></li>
+      <li><a href="#games" onclick="scrollToContent('games',event)">MINI GAMES</a></li>
       <li><a href="#faquestion" onclick="scrollToContent('faquestion',event)">FAQ</a></li>
     </ul>
   </nav>
