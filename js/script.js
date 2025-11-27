@@ -5,24 +5,44 @@ const text = document.getElementById('emission');
 const timer = setInterval(() => {
   emission += 0.2; //yay animation :D
   text.textContent = emission.toFixed(1);
-  if (emission >= target) clearInterval(timer);
-  text.textContent = emission.toFixed(1);
+  if (emission >= target) clearInterval(timer); //prevents it from wasting resources when it hits the target numbers
 }, 40);
 
-// idk i think i might tweak scroll later if navbar overlaps content
+//For AOS to function
+AOS.init({
+  duration: 700,
+  once: true, // animate only on first scroll
+  offset: 60 // slight delay before triggering the animation
+});
+
 function scrollToContent(id, event) {
   if (event) event.preventDefault();
 
   const section = document.getElementById(id);
   if (!section) return;
 
-  section.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
+  const offset = 1;
+  const scrollTo = section.offsetTop - offset;
+
+  window.scrollTo({
+    top: scrollTo,
+    behavior: "smooth"
   });
 }
 
-// Update nav button visibility based on scroll position
+function scrollToAbout(event) {
+  event.preventDefault();
+
+  const section = document.getElementById("about");
+  const offset = 1; 
+  const scrollTo = section.offsetTop - offset;
+
+  window.scrollTo({
+    top: scrollTo,
+    behavior: "smooth"
+  });
+}
+
 function updateNavButtons() {
   const slider = document.querySelector('.stats-slider');
   const leftBtn = document.querySelector('.stat-nav.left');
@@ -33,7 +53,6 @@ function updateNavButtons() {
   const scrollLeft = slider.scrollLeft;
   const maxScroll = slider.scrollWidth - slider.clientWidth;
   
-  // Hide left button if at start (no more content on the left)
   if (scrollLeft <= 5) {
     leftBtn.style.opacity = '0';
     leftBtn.style.pointerEvents = 'none';
@@ -42,7 +61,6 @@ function updateNavButtons() {
     leftBtn.style.pointerEvents = 'all';
   }
   
-  // Hide right button if at end (no more content on the right)
   if (scrollLeft >= maxScroll - 5) {
     rightBtn.style.opacity = '0';
     rightBtn.style.pointerEvents = 'none';
@@ -72,40 +90,6 @@ if (slider) {
   updateNavButtons();
 }
 
-// handle FAQ open/close
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach((item) => {
-  const q = item.querySelector('.question');
-  
-  q.addEventListener('click', () => {
-    const open = item.classList.contains('active');
-
-    // close all first
-    faqItems.forEach(i => i.classList.remove('active'));
-
-    // then open the clicked one if it wasn't already
-    if (!open) item.classList.add('active');
-  });
-});
-
-// fade in animation when scrolling into view
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = 1; // e is for entry or event or whatever you call it ig
-      e.target.style.transform = 'translateY(0)';
-    }
-  });
-});
-
-// init fade in styles
-faqItems.forEach(f => {
-  f.style.opacity = 0; // f is for fade, could be frame but uhh f is fade, variable names :]
-  f.style.transform = 'translateY(18px)';
-  f.style.transition = 'opacity .6s ease, transform .62s ease';
-  fadeObserver.observe(f);
-});
-
 // show navbar after hero scroll
 window.addEventListener('scroll', function() {
   const nav = document.querySelector('.navbar');
@@ -118,4 +102,19 @@ window.addEventListener('scroll', function() {
   } else {
     nav.classList.remove('show');
   }
+});
+
+//FAQ Related code
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach((item) => {
+  const q = item.querySelector('.question');
+  
+  q.addEventListener('click', () => {
+    const open = item.classList.contains('active');
+
+    faqItems.forEach(i => i.classList.remove('active'));
+
+    if (!open) item.classList.add('active');
+  });
 });

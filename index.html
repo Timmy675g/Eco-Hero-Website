@@ -2,6 +2,7 @@
   <head>
       <meta charset="UTF-8">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!--Loads AOS ( Animate On Scroll ) its just basically JavaScript Library for Animations :>-->
       <link rel="icon" href="Assets/icons/Favicon.png">
       <title>ClimateCore Website</title>
       <link id="theme-stylesheet" rel="stylesheet" href="css/style.css">
@@ -16,7 +17,7 @@
         <h1>Be An <br> Eco Hero!</h1>
         <p>Ayo cari tahu lebih banyak tentang perubahan iklim<br>
         dan cara melawannya!</p>
-        <button class="scroll-button" onclick="scrollToContent('about', event)">Mulai Jelajahi</button>
+        <button class="scroll-button" onclick="scrollToAbout(event)">Mulai Jelajahi</button>
     </div>
   </section>
 
@@ -82,16 +83,16 @@
       <span>Be An Eco Hero!</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#about" onclick="scrollToContent('about',event)">TENTANG</a></li>
-      <li><a href="#content" onclick="scrollToContent('content',event)">PERKENALAN</a></li>
-      <li><a href="#games" onclick="scrollToContent('games',event)">MINI GAMES</a></li>
-      <li><a href="#faquestion" onclick="scrollToContent('faquestion',event)">FAQ</a></li>
+      <li><a onclick="scrollToContent('about',event)">ABOUT</a></li>
+      <li><a onclick="scrollToContent('content',event)">INTRODUCTION</a></li>
+      <li><a onclick="scrollToContent('games',event)">MINI GAMES</a></li>
+      <li><a onclick="scrollToContent('faq',event)">FAQ</a></li>
     </ul>
   </nav>
 
   <!-- About Us -->
-  <section class="about-section" id="about">
-    <div class="about-text">
+  <section class="about-section" id="about" data-aos="fade-up">
+    <div class="about-text" data-aos="fade-right">
       <h2>Tentang Kami</h2>
       <p>ClimateCore Web Developers adalah sebuah tim pengembang yang berfokus untuk mengedukasi masyarakat tentang perubahan iklim melalui kampanye <br> 
         <b>"Eco Heroes: Rise For Climate Action"</b> serta sebuah website bertema perubahan iklim berjudul <b>"Be An Eco Hero!"</b>. <br>
@@ -101,15 +102,15 @@
       </p>
     </div>
 
-    <div class="about-image">
+    <div class="about-image" data-aos="fade-left">
       <img class="team-logo" src="Assets/icons/Favicon.png" alt="Our Team Logo">
       <p>Logo ClimateCore Web Developers</p> <!-- Fun Fact: I lost count on how many times i've redesign this logo, 5 times? 6 times? i don't really know anymore -->
     </div>
   </section>
 
   <!-- Should be Explanation page.. -->
-  <section class="content-section" id="content">
-    <div class="climate-text">
+  <section class="content-section" id="content" data-aos="fade-up">
+    <div class="climate-text" data-aos="fade-right">
       <h2>Ayo Pahami Perubahan Iklim!</h2>
       <p>
         Perubahan iklim adalah perubahan jangka panjang pada suhu dan pola cuaca di Bumi. <br> 
@@ -121,86 +122,97 @@
       </p>
     </div>
 
-    <div class="climate-image">
+    <div class="climate-image" data-aos="fade-left">
       <img class="after-before" src="Assets/images/glacier.png" alt="Glacier difference 1921 vs 2009">
       <p>Perbandingan Gletser: 1921 vs 2009</p>
     </div>
   </section>
 
   <!-- Mini Games Section!!! -->
-  <section class="mini-games" id="games">
-    <div class="games-header">
-      <h1>Ayo Uji Pengetahuanmu tentang Perubahan Iklim!</h1>
+<section class="mini-games" id="games">
+  <div class="games-header">
+    <h1 class="games-title" data-aos="fade-down">
+      Ayo Uji Pengetahuanmu tentang Perubahan Iklim!
+    </h1>
+  </div>
+
+  <div class="games-grid">
+
+    <div class="game-card" id="quiz" data-aos="fade-up" data-aos-delay="0">
+      <h2>Kuis Iklim</h2>
+      <p>Uji pengetahuanmu tentang perubahan iklim!</p>
+      <a href="html/quiz.html" class="quiz-btn">Main Quiz</a>
     </div>
-    
-    <div class="games-container">
-      <div class="game-card">
-        <h2>Kuis Iklim</h2>
-        <p>Uji pengetahuanmu tentang perubahan iklim!</p>
-        <a href="html/quiz.html" class="quiz-btn">Main Quiz</a>
-      </div>
-      
-      <div class="game-card">
-        <h2>Kalkulator Karbon</h2>
-        <p>Hitung jejak karbonmu dan pelajari cara menguranginya.</p>
-        <a href="html/calculator.html" class="quiz-btn">Kalkulasi</a>
-      </div>
-      
-      <div class="game-card">
-        <h2>Game Sortir Sampah</h2>
-        <p>Daur ulang atau organik? Pilah dengan tepat!</p>
-        <a href="html/Trash-Sorter.html" class="quiz-btn">Mainkan</a>
-      </div>
+
+    <div class="game-card" id="calculator" data-aos="fade-up" data-aos-delay="150">
+      <h2>Kalkulator Karbon</h2>
+      <p>Hitung jejak karbonmu dan pelajari cara menguranginya.</p>
+      <a href="html/calculator.html" class="quiz-btn">Kalkulasi</a>
     </div>
-  </section>
 
-  <!-- FAQ or Fruquently Asked Question if you dont know-->
-  <section class="faq" id="faquestion">
-      <div class="faq-container">
-          <div class="faq-item">
-              <div class="question">1. Apakah perubahan iklim alami atau akibat manusia?</div>
-              <div class="answer-container">
-                  <p class="answer">Keduanya. Alami bisa terjadi karena perubahan orbit Bumi atau letusan gunung berapi. <br> 
-                    Manusia juga memengaruhi perubahan iklim melalui deforestasi, pembakaran bahan bakar fosil, dan aktivitas industri yang mempercepat proses ini.</p>
-              </div>
-          </div>
+    <div class="game-card" id="sorter" data-aos="fade-up" data-aos-delay="300">
+      <h2>Game Sortir Sampah</h2>
+      <p>Daur ulang atau organik? Pilah dengan tepat!</p>
+      <a href="html/Trash-Sorter.html" class="quiz-btn">Mainkan</a>
+    </div>
 
-          <div class="faq-item">
-              <div class="question">2. Apa penyebab utama perubahan iklim?</div>
-              <div class="answer-container">
-                  <p class="answer">Penyebab utama meliputi pembakaran bahan bakar fosil untuk listrik dan panas, deforestasi, aktivitas industri, emisi transportasi, dan praktik pertanian yang melepaskan gas rumah kaca.</p>
-              </div>
-          </div>
+    <div class="game-card" id="upcoming" data-aos="fade-up" data-aos-delay="450">
+      <h2>Upcoming</h2>
+      <p>Upcoming Mini Game</p>
+      <!--<a href="#" class="quiz-btn">Mainkan</a> -->
+    </div>
 
-          <div class="faq-item">
-              <div class="question">3. Apa saja dampak perubahan iklim?</div>
-              <div class="answer-container">
-                  <p class="answer">Dampaknya termasuk naiknya permukaan laut, cuaca ekstrem, mencairnya gletser, hilangnya keanekaragaman hayati, ancaman terhadap ketahanan pangan, dan perpindahan komunitas di wilayah rentan.</p>
-              </div>
-          </div>
+  </div>
+</section>
 
-          <div class="faq-item">
-            <div class="question">4. Bagaimana perubahan iklim memengaruhi manusia, hewan, dan tumbuhan?</div>
-            <div class="answer-container">
-              <p class="answer">Perubahan iklim bisa menyebabkan gelombang panas meningkat, suhu yang lebih tinggi, cuaca ekstrem yang merusak habitat alami, serta polusi udara yang berisiko menimbulkan masalah jantung dan kanker.</p>
-            </div>
-          </div>
+    <!-- FAQ or Fruquently Asked Question if you dont know-->
+  <section class="faq" id="faq" data-aos="fade-up">
+    <div class="faq-container">
 
-          <div class="faq-item">
-            <div class="question">5. Apa itu Jejak Karbon dan apa dampaknya?</div>
-            <div class="answer-container">
-              <p class="answer">Jejak karbon adalah jumlah total gas rumah kaca, seperti karbon dioksida dan metana, yang dilepaskan ke atmosfer oleh aktivitas manusia. <br> 
-              Dampaknya meliputi kenaikan suhu, polusi, gangguan ekosistem, dan cuaca ekstrem.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="question">6. Apakah mendaur ulang benar-benar membantu perubahan iklim?</div>
-            <div class="answer-container">
-              <p class="answer">Ya, mendaur ulang sangat membantu perubahan iklim dengan mengurangi emisi gas rumah kaca, terutama dengan menghemat energi dan mengurangi kebutuhan mengekstrak serta memproses bahan alami.</p>
-            </div>
-          </div>
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="question">1. Apakah perubahan iklim alami atau akibat manusia?</div>
+        <div class="answer-container">
+          <p class="answer">Keduanya. Alami bisa terjadi karena perubahan orbit Bumi atau letusan gunung berapi. <br> 
+          Manusia juga memengaruhi perubahan iklim melalui deforestasi, pembakaran bahan bakar fosil, dan aktivitas industri.</p>
+        </div>
       </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="question">2. Apa penyebab utama perubahan iklim?</div>
+        <div class="answer-container">
+          <p class="answer">Penyebab utama meliputi pembakaran bahan bakar fosil, deforestasi, aktivitas industri, emisi transportasi, dan pertanian.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+        <div class="question">3. Apa saja dampak perubahan iklim?</div>
+        <div class="answer-container">
+          <p class="answer">Dampaknya termasuk naiknya permukaan laut, cuaca ekstrem, mencairnya gletser, hilangnya keanekaragaman hayati, dan ancaman terhadap ketahanan pangan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+        <div class="question">4. Bagaimana perubahan iklim memengaruhi manusia, hewan, dan tumbuhan?</div>
+        <div class="answer-container">
+          <p class="answer">Perubahan iklim menyebabkan gelombang panas meningkat, cuaca ekstrem, merusak habitat alami, serta polusi udara.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="question">5. Apa itu Jejak Karbon dan apa dampaknya?</div>
+        <div class="answer-container">
+          <p class="answer">Jejak karbon adalah total gas rumah kaca yang dilepaskan oleh aktivitas manusia. Dampaknya meliputi kenaikan suhu, polusi, dan cuaca ekstrem.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="question">6. Apakah mendaur ulang benar-benar membantu perubahan iklim?</div>
+        <div class="answer-container">
+          <p class="answer">Ya, mendaur ulang membantu mengurangi emisi gas rumah kaca, menghemat energi, dan mengurangi kebutuhan ekstraksi bahan alam.</p>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <!-- Footer Section, wait where's the section? oh..<footer> -->
@@ -253,8 +265,7 @@
       </div>
     </div>
   </footer>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/script.js"></script>
-
   </body>
 </html>
