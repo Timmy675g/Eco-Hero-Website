@@ -5,7 +5,7 @@
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!--Loads AOS ( Animate On Scroll ) its just basically JavaScript Library for Animations :>-->
       <link rel="icon" href="Assets/icons/Favicon.png">
       <title>ClimateCore Website</title>
-      <link id="theme-stylesheet" rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
@@ -82,11 +82,13 @@
       <img src="Assets/icons/Favicon.png" class="logo" onclick="scrollToContent('hero', event)">
       <span>Be An Eco Hero!</span>
     </div>
-    <ul class="nav-links">
-      <li><a onclick="scrollToContent('about',event)">ABOUT</a></li>
+    <ul class="nav-links">   
+      <li><a onclick="scrollToContent('about',event)">ABOUT</a></li> 
       <li><a onclick="scrollToContent('content',event)">INTRODUCTION</a></li>
-      <li><a onclick="scrollToContent('games',event)">MINI GAMES</a></li>
+      <li><a onclick="scrollToContent('games',event)">MINI GAMES</a></li>  
+      <li><a onclick="scrollToContent('news-section',event)">NEWS</a></li>
       <li><a onclick="scrollToContent('faq',event)">FAQ</a></li>
+      <li class="cta-button"><a onclick="scrollToContent('cta',event)">MISSIONS</a></li>
     </ul>
   </nav>
 
@@ -213,6 +215,44 @@
       </div>
 
     </div>
+  </section>
+
+  <section id="cta" class="cta-section">
+      <h2 class="cta-title">Call To Action !</h2>
+      <div class="cta-card-container">
+          <div class="cta-card">
+              <img src="Assets/images/cta1.jpg" alt="Action 1">
+              <div class="card-content-wrapper"> 
+                  <h3>Ayo Mulai Misi Penyelamatan Bumi!</h3>
+                  <p>Jangan hanya diam. Jadilah Eco Hero dan ambil langkah pertamamu melawan perubahan iklim sekarang.</p>
+              </div>
+              <div class="card-button-wrapper"> 
+                  <a href="html/actions-cta.html" class="cta-btn">Mulai Misi Sekarang</a>
+              </div>
+              </div>
+
+          <div class="cta-card">
+              <img src="Assets/images/cta2.jpeg" alt="Action 2">
+              <div class="card-content-wrapper">
+                  <h3>Tips Eco Sehari-hari</h3>
+                  <p>Bingung harus mulai dari mana? Temukan cara-cara kecil namun berdampak besar dan efektif untuk mengurangi jejak karbonmu.</p>
+              </div>
+              <div class="card-button-wrapper"> 
+                  <a href="html/tips-cta.html" class="cta-btn">Lihat Tips Praktis</a>
+              </div>
+          </div>
+
+          <div class="cta-card">
+              <img src="Assets/images/cta3.jpg" alt="Action 3">
+              <div class="card-content-wrapper"> 
+                  <h3>Kisah Para Pahlawan Bumi</h3>
+                  <p>Kamu tidak berjuang sendirian! Mari Dapatkan inspirasi dari cerita nyata para Eco Heroes yang telah membuat perubahan.</p>
+              </div>
+              <div class="card-button-wrapper"> 
+                  <a href="html/eco-heroes.html" class="cta-btn">Baca Kisah Mereka</a>
+              </div>
+              </div>
+          </div>
   </section>
 
   <!-- Footer Section, wait where's the section? oh..<footer> -->
