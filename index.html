@@ -3,7 +3,7 @@
       <meta charset="UTF-8">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
       <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!--Loads AOS ( Animate On Scroll ) its just basically JavaScript Library for Animations :>-->
-      <link rel="icon" href="Assets/icons/Favicon.png">
+      <link rel="icon" href="Assets/icons/Favicon.ico"> <!--Apparently .ico is the best for Favicon-->
       <title>ClimateCore Website</title>
       <link rel="stylesheet" href="css/style.css">
   </head>
@@ -11,13 +11,13 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero"> 
-    <img src="Assets/images/climate.png" class="hero-img" alt="Earth Image">
+    <img src="Assets/images/climate.webp" class="hero-img" alt="Earth Image"> <!--.webp pretty much works on all browser but not supported before iOS14.-->
 
     <div class="hero-text">
         <h1>Be An <br> Eco Hero!</h1>
         <p>Ayo cari tahu lebih banyak tentang perubahan iklim<br>
         dan cara melawannya!</p>
-        <button class="scroll-button" onclick="scrollToAbout(event)">Mulai Jelajahi</button>
+        <button class="scroll-button" onclick="scrollToContent('content', event)">Mulai Jelajahi</button>
     </div>
   </section>
 
@@ -79,38 +79,18 @@
   <!-- Navbar ( Horizontal ofc ) -->
   <nav class="navbar">
     <div class="logo">
-      <img src="Assets/icons/Favicon.png" class="logo" onclick="scrollToContent('hero', event)">
+      <img src="Assets/icons/Icon.png" class="logo" onclick="scrollToContent('hero', event)">
       <span>Be An Eco Hero!</span>
     </div>
     <ul class="nav-links">   
-      <li><a onclick="scrollToContent('about',event)">ABOUT</a></li> 
       <li><a onclick="scrollToContent('content',event)">INTRODUCTION</a></li>
+      <li><a onclick="scrollToContent('about',event)">ABOUT</a></li> 
       <li><a onclick="scrollToContent('games',event)">MINI GAMES</a></li>  
-      <li><a onclick="scrollToContent('news-section',event)">NEWS</a></li>
-      <li><a onclick="scrollToContent('faq',event)">FAQ</a></li>
-      <li class="cta-button"><a onclick="scrollToContent('cta',event)">MISSIONS</a></li>
+      <li class="cta-button"><a onclick="scrollToContent('cta',event)">ACTION</a></li>
     </ul>
   </nav>
 
-  <!-- About Us -->
-  <section class="about-section" id="about" data-aos="fade-up">
-    <div class="about-text" data-aos="fade-right">
-      <h2>Tentang Kami</h2>
-      <p>ClimateCore Web Developers adalah sebuah tim pengembang yang berfokus untuk mengedukasi masyarakat tentang perubahan iklim melalui kampanye <br> 
-        <b>"Eco Heroes: Rise For Climate Action"</b> serta sebuah website bertema perubahan iklim berjudul <b>"Be An Eco Hero!"</b>. <br>
-        Kami menyoroti berbagai permasalahan terkait perubahan iklim dan memberikan berbagai cara untuk membantu mengatasinya.<br>
-        Kami juga membuat beberapa permainan interaktif agar pengguna dapat belajar menyelesaikan berbagai tantangan terkait perubahan iklim dengan cara yang menyenangkan. <br>
-        Dengan berkolaborasi dan bekerja sama, kita dapat menghadapi dan mengatasi perubahan iklim sebagai sebuah tim!
-      </p>
-    </div>
-
-    <div class="about-image" data-aos="fade-left">
-      <img class="team-logo" src="Assets/icons/Favicon.png" alt="Our Team Logo">
-      <p>Logo ClimateCore Web Developers</p> <!-- Fun Fact: I lost count on how many times i've redesign this logo, 5 times? 6 times? i don't really know anymore -->
-    </div>
-  </section>
-
-  <!-- Should be Explanation page.. -->
+    <!-- Should be Explanation page.. -->
   <section class="content-section" id="content" data-aos="fade-up">
     <div class="climate-text" data-aos="fade-right">
       <h2>Ayo Pahami Perubahan Iklim!</h2>
@@ -125,47 +105,158 @@
     </div>
 
     <div class="climate-image" data-aos="fade-left">
-      <img class="after-before" src="Assets/images/glacier.png" alt="Glacier difference 1921 vs 2009">
+      <img class="after-before" src="Assets/images/glacier.webp" alt="Glacier difference 1921 vs 2009">
       <p>Perbandingan Gletser: 1921 vs 2009</p>
     </div>
   </section>
 
-  <!-- Mini Games Section!!! -->
-<section class="mini-games" id="games">
-  <div class="games-header">
-    <h1 class="games-title" data-aos="fade-down">
-      Ayo Uji Pengetahuanmu tentang Perubahan Iklim!
-    </h1>
-  </div>
+ <!-- About Us and Mission Section -->
+  <section class="about-mission-section" id="about" data-aos="fade-up">
+    
+    <div class="about-row">
 
-  <div class="games-grid">
+      <!-- About Text -->
+      <div class="about-text" data-aos="fade-right">
+        <h2>Tentang Kami</h2>
+        <p>
+          ClimateCore Web Developers adalah sebuah tim pengembang yang berfokus untuk mengedukasi masyarakat 
+          tentang perubahan iklim melalui kampanye <b>"Eco Heroes: Rise For Climate Action"</b> serta website 
+          bertema perubahan iklim berjudul <b>"Be An Eco Hero!"</b>.
+          <br><br>
+          Kami menyoroti berbagai permasalahan terkait perubahan iklim dan memberikan berbagai cara untuk 
+          membantu mengatasinya. Kami juga membuat beberapa permainan interaktif agar pengguna dapat belajar 
+          menyelesaikan berbagai tantangan dengan cara yang menyenangkan.
+          <br><br>
+          Dengan berkolaborasi dan bekerja sama, kita dapat menghadapi dan mengatasi perubahan iklim sebagai sebuah tim!
+        </p>
+      </div>
 
-    <div class="game-card" id="quiz" data-aos="fade-up" data-aos-delay="0">
-      <h2>Kuis Iklim</h2>
-      <p>Uji pengetahuanmu tentang perubahan iklim!</p>
-      <a href="html/quiz.html" class="quiz-btn">Main Quiz</a>
+      <div class="about-image" data-aos="fade-left">
+        <img src="Assets/icons/Icon.png" class="team-logo" alt="Our Team Logo">
+        <p>Logo ClimateCore Web Developers</p>
+      </div>
     </div>
 
-    <div class="game-card" id="calculator" data-aos="fade-up" data-aos-delay="150">
-      <h2>Kalkulator Karbon</h2>
-      <p>Hitung jejak karbonmu dan pelajari cara menguranginya.</p>
-      <a href="html/calculator.html" class="quiz-btn">Kalkulasi</a>
+    <!-- Mission Title -->
+    <h2 class="mission-title" data-aos="fade-up">Our Mission</h2>
+
+    <div class="mission-container">
+      <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="Assets/icons/tree.png" class="mission-icon">
+        <h3>Conserve Nature</h3>
+        <p>Kami berkomitmen menanam pohon dan menjaga ekosistem hutan dari ancaman deforestasi.</p>
+      </div>
+
+      <div class="mission-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="Assets/icons/energy.png" class="mission-icon">
+        <h3>Clean Energy</h3>
+        <p>Mendorong penggunaan energi terbarukan seperti tenaga surya dan angin untuk masa depan hijau.</p>
+      </div>
+
+      <div class="mission-card" data-aos="fade-up" data-aos-delay="300">
+        <img src="Assets/icons/recycle.png" class="mission-icon">
+        <h3>Recycling & Education</h3>
+        <p>Mengajarkan pentingnya gaya hidup berkelanjutan dan pengelolaan sampah sejak dini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!--CTA Section! or Call To Action-->
+  <section id="cta" class="cta-section">
+    <h2 class="cta-title" data-aos="fade-down">Call To Action !</h2> 
+    <div class="cta-card-container">
+        <div class="cta-card-anim" data-aos="fade-up" data-aos-delay="0"> <!--gotta add this, since the AOS conflicts with the css hover animation-->
+            <div class="cta-card">
+                <img src="Assets/images/cta1.webp" alt="Action 1">
+
+                <div class="card-content-wrapper"> 
+                    <h3>Ayo Mulai Misi Penyelamatan Bumi!</h3>
+                    <p>Jangan hanya diam. Jadilah Eco Hero dan ambil langkah pertamamu melawan perubahan iklim sekarang.</p>
+                </div>
+
+                <div class="card-button-wrapper"> 
+                    <a href="html/actions-cta.html" class="cta-btn">Mulai Misi Sekarang</a>
+                </div>
+            </div>
+          </div>
+
+          <div class="cta-card-anim" data-aos="fade-up" data-aos-delay="150">
+              <div class="cta-card">
+                  <img src="Assets/images/cta2.webp" alt="Action 2">
+
+                  <div class="card-content-wrapper">
+                      <h3>Tips Eco Sehari-hari</h3>
+                      <p>Bingung harus mulai dari mana? Temukan cara-cara kecil namun berdampak besar dan efektif untuk mengurangi jejak karbonmu.</p>
+                  </div>
+
+                  <div class="card-button-wrapper"> 
+                      <a href="html/tips-cta.html" class="cta-btn">Lihat Tips Praktis</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="cta-card-anim" data-aos="fade-up" data-aos-delay="300">
+              <div class="cta-card">
+                  <img src="Assets/images/cta3.webp" alt="Action 3">
+
+                  <div class="card-content-wrapper"> 
+                      <h3>Kisah Para Pahlawan Bumi</h3>
+                      <p>Kamu tidak berjuang sendirian! Mari Dapatkan inspirasi dari cerita nyata para Eco Heroes yang telah membuat perubahan.</p>
+                  </div>
+
+                  <div class="card-button-wrapper"> 
+                      <a href="html/eco-heroes.html" class="cta-btn">Baca Kisah Mereka</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!-- Mini Games Section!!! -->
+  <section class="mini-games" id="games">
+    <div class="games-header">
+      <h1 class="games-title" data-aos="fade-down">Ayo Uji Pengetahuanmu tentang Perubahan Iklim!</h1>
     </div>
 
-    <div class="game-card" id="sorter" data-aos="fade-up" data-aos-delay="300">
-      <h2>Game Sortir Sampah</h2>
-      <p>Daur ulang atau organik? Pilah dengan tepat!</p>
-      <a href="html/Trash-Sorter.html" class="quiz-btn">Mainkan</a>
-    </div>
+    <div class="games-grid">
+      
+      <div class="game-card-anim" data-aos="fade-up" data-aos-delay="0"> <!--The same reason as the CTA one...-->
+        <div class="game-card" id="quiz">
+          <h2>Kuis Iklim</h2>
+          <p>Uji pengetahuanmu tentang perubahan iklim!</p>
+          <a href="html/quiz.html" class="quiz-btn">Main Quiz</a>
+        </div>
+      </div>
 
-    <div class="game-card" id="upcoming" data-aos="fade-up" data-aos-delay="450">
-      <h2>Upcoming</h2>
-      <p>Upcoming Mini Game</p>
-      <!--<a href="#" class="quiz-btn">Mainkan</a> -->
-    </div>
+      <div class="game-card-anim" data-aos="fade-up" data-aos-delay="150">
+        <div class="game-card" id="calculator">
+          <h2>Kalkulator Karbon</h2>
+          <p>Hitung jejak karbonmu dan pelajari cara menguranginya.</p>
+          <a href="html/calculator.html" class="quiz-btn">Kalkulasi</a>
+        </div>
+      </div>
 
-  </div>
-</section>
+      <div class="game-card-anim" data-aos="fade-up" data-aos-delay="300">
+        <div class="game-card" id="sorter">
+          <h2>Game Sortir Sampah</h2>
+          <p>Daur ulang atau organik? Pilah dengan tepat!</p>
+          <a href="html/Trash-Sorter.html" class="quiz-btn">Mainkan</a>
+        </div>
+      </div>
+
+      <div class="game-card-anim" data-aos="fade-up" data-aos-delay="450">
+        <div class="game-card" id="upcoming">
+          <h2>Upcoming</h2>
+          <p>Upcoming Mini Game</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--News Section!!-->
+  <section class="news" id="news" data-aos="fade-up">
+
+  </section>
 
     <!-- FAQ or Fruquently Asked Question if you dont know-->
   <section class="faq" id="faq" data-aos="fade-up">
@@ -217,49 +308,11 @@
     </div>
   </section>
 
-  <section id="cta" class="cta-section">
-      <h2 class="cta-title">Call To Action !</h2>
-      <div class="cta-card-container">
-          <div class="cta-card">
-              <img src="Assets/images/cta1.jpg" alt="Action 1">
-              <div class="card-content-wrapper"> 
-                  <h3>Ayo Mulai Misi Penyelamatan Bumi!</h3>
-                  <p>Jangan hanya diam. Jadilah Eco Hero dan ambil langkah pertamamu melawan perubahan iklim sekarang.</p>
-              </div>
-              <div class="card-button-wrapper"> 
-                  <a href="html/actions-cta.html" class="cta-btn">Mulai Misi Sekarang</a>
-              </div>
-              </div>
-
-          <div class="cta-card">
-              <img src="Assets/images/cta2.jpeg" alt="Action 2">
-              <div class="card-content-wrapper">
-                  <h3>Tips Eco Sehari-hari</h3>
-                  <p>Bingung harus mulai dari mana? Temukan cara-cara kecil namun berdampak besar dan efektif untuk mengurangi jejak karbonmu.</p>
-              </div>
-              <div class="card-button-wrapper"> 
-                  <a href="html/tips-cta.html" class="cta-btn">Lihat Tips Praktis</a>
-              </div>
-          </div>
-
-          <div class="cta-card">
-              <img src="Assets/images/cta3.jpg" alt="Action 3">
-              <div class="card-content-wrapper"> 
-                  <h3>Kisah Para Pahlawan Bumi</h3>
-                  <p>Kamu tidak berjuang sendirian! Mari Dapatkan inspirasi dari cerita nyata para Eco Heroes yang telah membuat perubahan.</p>
-              </div>
-              <div class="card-button-wrapper"> 
-                  <a href="html/eco-heroes.html" class="cta-btn">Baca Kisah Mereka</a>
-              </div>
-              </div>
-          </div>
-  </section>
-
   <!-- Footer Section, wait where's the section? oh..<footer> -->
   <footer class="footer">
     <div class="footer-wrapper">
       <div class="footer-content">
-        <img src="Assets/icons/Favicon.png" alt="Logo" class="footer-logo">
+        <img src="Assets/icons/Icon.png" alt="Logo" class="footer-logo">
         <h1 class="footer-header">ClimateCore Web Developers</h1>
         <p>ClimateCore Web Developers bekerja untuk membuat dan menjaga situs web ini untuk mendidik masyarakat tentang penyebab dan solusi perubahan iklim.</p>
         <h4>Beberapa konten dan kode terinspirasi dari proyek open source, video di <b>GitHub</b> dan <b>Youtube</b> <br>
@@ -274,7 +327,7 @@
       <div class="footer-team">
         <h2>Pengembang Website :</h2>
         <div class="team-member">
-          <img src="Assets/images/Developer_1.jpg" alt="Timmy" class="team-photo">
+          <img src="Assets/images/Developer_1.webp" alt="Timmy" class="team-photo">
           <span>Lionel Timothy Tarigan - Lead Website Developer & Maintainer</span>
           <div class="social-links">
             <a href="https://github.com/Timmy675g" target="_blank">
@@ -289,7 +342,7 @@
         </div>
 
         <div class="team-member">
-          <img src="Assets/images/Developer_2.jpg" alt="Teammate 1" class="team-photo">
+          <img src="Assets/images/Developer_2.webp" alt="Teammate 1" class="team-photo">
           <span>Michelangelo Kamil - Website & Mini Games Developer </span>
           <div class="social-links">
             <a href="https://github.com/michelangelokamil-source" target="_blank">

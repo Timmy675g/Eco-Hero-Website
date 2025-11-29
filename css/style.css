@@ -379,19 +379,16 @@ body {
   scroll-margin-top: 210px;
 }
 
-/*About section*/
-.about-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  min-height: 100vh;
-  padding: 100px 80px;
-  background: white;
+/*About and Mission section*/
+.about-mission-section {
+  padding: 90px 5%;
+  background: #F0F7F0;
 }
 
-.about-text {
-  flex: 1.2;
+
+.about-text { 
+    flex: 1.2; 
+    min-width: 320px;
 }
 
 @keyframes fadeInLeft {
@@ -406,7 +403,8 @@ body {
 }
 
 .about-image {
-  flex: 1;
+  flex: 0.8;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -447,7 +445,7 @@ body {
   color: #111111;
 }
 
-.about-section h2 {
+.about-mission-section h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 48px;
@@ -455,10 +453,56 @@ body {
   color: #36C75F;
 }
 
-.about-section p {
+.about-mission-section p {
   font-size: 15.8px;
   line-height: 1.8;
   color: #111111;
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+
+.logo-caption {
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+.mission-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.mission-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.mission-card {
+  background: white;
+  width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.mission-card h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mission-icon {
+  width: 50px;
+  height: 50px;
 }
 
 /*Explanation section*/
@@ -469,7 +513,7 @@ body {
   gap: 60px;
   min-height: 100vh;
   padding: 100px 80px;
-  background: white;
+  background: #F0F7F0;
   color: white;
 }
 
@@ -555,7 +599,7 @@ body {
 .mini-games {
   min-height: 80vh;
   padding: 100px 80px;
-  background: white;
+  background: #F0F7F0;
 }
 
 .games-header {
@@ -597,9 +641,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
   transition: 0.25s ease;
-  backdrop-filter: blur(10px);
+  height: 280px;
+  min-height: 280px; 
 }
 
 .game-card:hover {
@@ -775,7 +821,7 @@ body {
 /*CTA section or Call To Action section :]*/
 .cta-section {
   padding: 60px 100px;
-  background: #f7fff7;
+  background: #F0F7F0;
   text-align: center;
 }
 
@@ -802,17 +848,28 @@ body {
 .cta-card-container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  margin-top: auto;
   gap: 25px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cta-card-anim {
+    min-height: 420px;
+    flex: 1 1 300px;
+    display: flex;
 }
 
 .cta-card {
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  width: 300px;
+  width: 100%;
   box-shadow: 0 8px 18px rgba(0,0,0,0.12);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
