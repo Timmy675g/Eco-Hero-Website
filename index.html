@@ -11,7 +11,8 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero"> 
-    <img src="Assets/images/climate.webp" class="hero-img" alt="Earth Image"> <!--.webp pretty much works on all browser but not supported before iOS14.-->
+    <img rel="preload" src="Assets/images/climate.webp" class="hero-img" alt="Earth Image">
+    <!--relationship or rel using preload is because Hero picture needs to load first before anything else for performance boost (LCP)-->
 
     <div class="hero-text">
         <h1>Be An <br> Eco Hero!</h1>
@@ -79,7 +80,7 @@
   <!-- Navbar ( Horizontal ofc ) -->
   <nav class="navbar">
     <div class="logo">
-      <img src="Assets/icons/Icon.png" class="logo" onclick="scrollToContent('hero', event)">
+      <img src="Assets/icons/Icon.webp" class="logo" onclick="scrollToContent('hero', event)">
       <span>Be An Eco Hero!</span>
     </div>
     <ul class="nav-links">   
@@ -105,7 +106,7 @@
     </div>
 
     <div class="climate-image" data-aos="fade-left">
-      <img class="after-before" src="Assets/images/glacier.webp" alt="Glacier difference 1921 vs 2009">
+      <img class="after-before" src="Assets/images/glacier.webp" alt="Glacier difference 1921 vs 2009"> <!--.webp pretty much works on all browser but not supported before iOS14.-->
       <p>Perbandingan Gletser: 1921 vs 2009</p>
     </div>
   </section>
@@ -132,30 +133,30 @@
       </div>
 
       <div class="about-image" data-aos="fade-left">
-        <img src="Assets/icons/Icon.png" class="team-logo" alt="Our Team Logo">
+        <img src="Assets/icons/Icon.webp" class="team-logo" alt="Our Team Logo">
         <p>Logo ClimateCore Web Developers</p>
       </div>
     </div>
 
     <!-- Mission Title -->
-    <h2 class="mission-title" data-aos="fade-up">Our Mission</h2>
+    <h2 class="mission-title" data-aos="fade-up">Misi Kami</h2>
 
     <div class="mission-container">
       <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="Assets/icons/tree.png" class="mission-icon">
-        <h3>Conserve Nature</h3>
-        <p>Kami berkomitmen menanam pohon dan menjaga ekosistem hutan dari ancaman deforestasi.</p>
+        <img src="Assets/icons/EcoBook.png" class="mission-icon">
+        <h3>Edukasi Iklim</h3>
+        <p>Mengajari berapa pentingnya masyarakat mengetahui tentang perubahan iklim dan apa penyebab dan solusinya.</p>
       </div>
 
       <div class="mission-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="Assets/icons/energy.png" class="mission-icon">
-        <h3>Clean Energy</h3>
+        <img src="Assets/icons/Action.png" class="mission-icon">
+        <h3>Aksi Lingkungan</h3>
         <p>Mendorong penggunaan energi terbarukan seperti tenaga surya dan angin untuk masa depan hijau.</p>
       </div>
 
       <div class="mission-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="Assets/icons/recycle.png" class="mission-icon">
-        <h3>Recycling & Education</h3>
+        <img src="Assets/icons/Collab.png" class="mission-icon">
+        <h3>Kolaborasi Alam</h3>
         <p>Mengajarkan pentingnya gaya hidup berkelanjutan dan pengelolaan sampah sejak dini.</p>
       </div>
     </div>
@@ -312,7 +313,7 @@
   <footer class="footer">
     <div class="footer-wrapper">
       <div class="footer-content">
-        <img src="Assets/icons/Icon.png" alt="Logo" class="footer-logo">
+        <img src="Assets/icons/Icon.webp" alt="Logo" class="footer-logo">
         <h1 class="footer-header">ClimateCore Web Developers</h1>
         <p>ClimateCore Web Developers bekerja untuk membuat dan menjaga situs web ini untuk mendidik masyarakat tentang penyebab dan solusi perubahan iklim.</p>
         <h4>Beberapa konten dan kode terinspirasi dari proyek open source, video di <b>GitHub</b> dan <b>Youtube</b> <br>
