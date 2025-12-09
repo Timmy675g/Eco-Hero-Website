@@ -15,6 +15,7 @@ html {
 body {
     font-family: 'Open Sans', Arial, sans-serif; /*gotta love this font :]*/
     overflow-x: hidden;
+    background-color: #F0F7F0;
 }
 
 /*Hero section, well yea*/
@@ -76,7 +77,7 @@ body {
 
 .hero-text p {
     font-family: 'Open Sans', Arial, sans-serif;
-    color: rgba(255, 255, 255, 0.92);
+    color: white;
     font-size: 19px;
     font-weight: 400;
     letter-spacing: 0.01em;
@@ -104,7 +105,7 @@ body {
 
 .scroll-button:hover {
     background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: lightgray;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -113,7 +114,7 @@ body {
     transform: translateY(0);
 }
 
-/*Climate Stats Section, well, kinda inspired like Nasa hehe inspiration babyy*/
+/*Climate Stats Section*/
 .climate-stats-bar {
   background: #000;
   color: #fff;
@@ -156,7 +157,7 @@ body {
   flex-direction: column;
   min-width: 280px;
   text-align: left;
-  border-left: 2px solid #444;
+  border-left: 2px solid darkslategray;
   padding-left: 1.5rem;
 }
 
@@ -185,7 +186,7 @@ body {
 }
 
 .arrow { 
-  font-size: 2rem; /*eh, about 30 - 32 px*/
+  font-size: 2rem;
   line-height: 1;
 }
 
@@ -204,10 +205,10 @@ body {
   line-height: 1;
 }
 
-.stat-label { /*p*/
+.stat-label { 
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 0.9rem;
-  color: #aaa;
+  color: lightgray;
   margin: 0;
   max-width: 200px;
 }
@@ -217,7 +218,7 @@ body {
   z-index: 2; /* Keep buttons above the fade mask */
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid #444;
-  color: #fff;
+  color: white;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -738,84 +739,122 @@ body {
 
 /*faq section, for those who is looking for quick info hehe*/
 .faq {
-  min-height: 100vh;
-  padding: 100px 80px;
-  background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+    min-height: 100vh;
+    padding: 100px 80px;
+    background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+    color: white; 
+    font-family: 'Poppins', sans-serif;
 }
 
 .faq-header {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .faq-header h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  color: #36C75F;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #36C75F;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.faq-container {
-  max-width: 900px;
+.faq-panel-container {
+    max-width: 1000px;
+    margin: 40px auto 80px auto;
+    display: flex;
+    gap: 30px;
+}
+
+.faq-panel-item {
+    flex: 1; 
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.faq-panel-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.faq-panel-item h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.faq-panel-item p {
+    font-size: 16px;
+    color: #F0F7F0;
+    margin-bottom: 20px;
+}
+
+.faq-panel-item.active {
+    background: #0a0e27; 
+    border-color: #36C75F; 
+    box-shadow: 0 0 15px rgba(54, 199, 95, 0.2);
+}
+
+/* Style for the internal buttons (renamed to .faq-btn-internal) */
+.faq-btn-internal {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    background: #36C75F; /* Green solid button */
+    color: #0a0e27;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.faq-btn-internal:hover {
+    background: #4ade80; /* Lighter green on hover */
+    transform: translateY(-2px);
+}
+
+.contact {
+  max-width: 500px;
   margin: 0 auto;
-}
-
-.faq-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.question {
-  padding: 24px 28px;
-  font-size: 18px;
-  font-weight: 600;
+  padding: 20px;
   color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.contact h2 {
+  margin-bottom: 15px;
+  color: #36C75F;
+}
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.contact button {
+  background: #ff6600;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  user-select: none;
+  transition: 0.3s;
 }
-
-.question::after {
-  content: '+';
-  font-size: 28px;
-  font-weight: 300;
-  transition: transform 0.3s ease;
-  color: #4ade80;
+.contact button:hover {
+  background: #ff8533;
 }
-
-.faq-item.active .question::after { /* when you click the faq item, the .question::after (the lil + icon) rotates 45deg */
-  transform: rotate(45deg);
-}
-
-.answer-container {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-}
-
-.faq-item.active .answer-container {
-  max-height: 300px;
-  padding: 0 28px 24px 28px;
-}
-
-.answer {
-  font-size: 16px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.7);
+.status-msg {
+  display: none;
+  margin-top: 10px;
+  color: #0f0;
+  font-weight: bold;
 }
 
 /*CTA section or Call To Action section :]*/
@@ -891,7 +930,7 @@ body {
 .cta-card p {
   font-size: 15px;
   padding: 0 20px;
-  color: #444;
+  color: darkslategray;
   margin-bottom: 15px;
   font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -912,7 +951,6 @@ body {
   background: #23993f;
 }
 
-/* Hover effect on card */
 .cta-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0,0,0,0.18);
@@ -998,7 +1036,7 @@ body {
 
 .team-member span {
   font-size: 14px;
-  color: #ddd;
+  color: #F0F7F0;
   text-align: right;
 }
 
@@ -1011,7 +1049,7 @@ body {
 
 .name {
   font-size: 15px;
-  color: #ddd;
+  color: #F0F7F0;
   font-weight: 500;
 }
 
@@ -1029,7 +1067,7 @@ body {
   text-decoration: none;
   color: #4ade80;
   font-size: 14px;
-  gap: 4px; /*gap to verstappen is 20 seconds ;] */
+  gap: 4px;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -1057,6 +1095,6 @@ footer ul li {
 }
 
 footer ul li a { /* all <a> links inside <li> list inside <ul> those bullet points inside the <footer>*/
-  color: #fff;
+  color: white;
   text-decoration: underline;
 }

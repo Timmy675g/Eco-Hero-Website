@@ -3,10 +3,11 @@ const target = 42.2; //target number for avg Co2 Emissions as of 2025, probably 
 const text = document.getElementById('emission');
 
 const timer = setInterval(() => {
-  emission += 0.2; //yay animation :D
+  emission += 0.2; 
   text.textContent = emission.toFixed(1);
   if (emission >= target) clearInterval(timer); //prevents it from wasting resources when it hits the target numbers
-}, 40);
+}, 40); // so basically it will runs every 40ms and since 1 second is 1000ms its gonna be 1000/40 = 25 and 25 * 0.2 = 5, so the number will go up 5/second
+// so it will reach 42.2 in 8.44 seconds (42.2 / 5 = 8.44)
 
 //For AOS to function
 AOS.init({
@@ -21,7 +22,7 @@ function scrollToContent(id, event) {
   const section = document.getElementById(id);
   if (!section) return;
 
-  const offset = 1;
+  const offset = 1; //universal nav, so every section
   const scrollTo = section.offsetTop - offset;
 
   window.scrollTo({
@@ -34,7 +35,7 @@ function scrollToAbout(event) {
   event.preventDefault();
 
   const section = document.getElementById("about");
-  const offset = 1; 
+  const offset = 1; // only to about section
   const scrollTo = section.offsetTop - offset;
 
   window.scrollTo({
@@ -104,7 +105,6 @@ window.addEventListener('scroll', function() {
   }
 });
 
-//FAQ Related code
 const faqItems = document.querySelectorAll('.faq-item');
 
 faqItems.forEach((item) => {
@@ -117,4 +117,14 @@ faqItems.forEach((item) => {
 
     if (!open) item.classList.add('active');
   });
+});
+
+const form = document.getElementById('feedbackForm');
+const statusMsg = document.getElementById('statusMsg');
+
+form.addEventListener('submit', (e) => {
+  statusMsg.style.display = 'block';
+  setTimeout(() => {
+    statusMsg.style.display = 'none';
+  }, 4000);
 });

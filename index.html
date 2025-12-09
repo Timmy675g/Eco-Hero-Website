@@ -87,6 +87,7 @@
       <li><a onclick="scrollToContent('content',event)">INTRODUCTION</a></li>
       <li><a onclick="scrollToContent('about',event)">ABOUT</a></li> 
       <li><a onclick="scrollToContent('games',event)">MINI GAMES</a></li>  
+      <li><a onclick="scrollToContent('faq', event)">FAQ</a></li>
       <li class="cta-button"><a onclick="scrollToContent('cta',event)">ACTION</a></li>
     </ul>
   </nav>
@@ -106,7 +107,7 @@
     </div>
 
     <div class="climate-image" data-aos="fade-left">
-      <img class="after-before" src="Assets/images/glacier.webp" alt="Glacier difference 1921 vs 2009"> <!--.webp pretty much works on all browser but not supported before iOS14.-->
+      <img class="after-before" src="Assets/images/glacier.webp" alt="Glacier difference 1921 vs 2009"> <!--.webp reduces file size and improve performances and pretty much works on all browser but not supported before iOS14.-->
       <p>Perbandingan Gletser: 1921 vs 2009</p>
     </div>
   </section>
@@ -254,62 +255,46 @@
     </div>
   </section>
 
-  <!--News Section!!-->
-  <section class="news" id="news" data-aos="fade-up">
-
-  </section>
-
     <!-- FAQ or Fruquently Asked Question if you dont know-->
   <section class="faq" id="faq" data-aos="fade-up">
-    <div class="faq-container">
 
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
-        <div class="question">1. Apakah perubahan iklim alami atau akibat manusia?</div>
-        <div class="answer-container">
-          <p class="answer">Keduanya. Alami bisa terjadi karena perubahan orbit Bumi atau letusan gunung berapi. <br> 
-          Manusia juga memengaruhi perubahan iklim melalui deforestasi, pembakaran bahan bakar fosil, dan aktivitas industri.</p>
-        </div>
+    <div class="faq-header">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+
+    <div class="faq-panel-container" data-aos="fade-up" data-aos-delay="0"> 
+      <div class="faq-panel-item">
+          <h3>Website FAQ</h3>
+          <p>Pertanyaan yang paling sering ditanyakan <br>
+          tentang website ini!</p>
+          <a href="html/faq-website.html" class="faq-btn-internal">Website FAQ</a> 
       </div>
+        
+      <div class="faq-panel-item active" data-aos="fade-up" data-aos-delay="150">
+          <h3>Climate Change FAQ</h3>
+          <p>Pertanyaan yang paling sering ditanyakan <br>
+          tentang perubahan iklim!</p>
+          <a href="html/faq-climate.html" class="faq-btn-internal">Climate FAQ</a>
+      </div>  
+    </div>
 
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
-        <div class="question">2. Apa penyebab utama perubahan iklim?</div>
-        <div class="answer-container">
-          <p class="answer">Penyebab utama meliputi pembakaran bahan bakar fosil, deforestasi, aktivitas industri, emisi transportasi, dan pertanian.</p>
-        </div>
-      </div>
+    <div class="contact" id="feedback" data-aos="fade-up" data-aos-delay="0">
+      <h2>Feedback</h2>
 
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
-        <div class="question">3. Apa saja dampak perubahan iklim?</div>
-        <div class="answer-container">
-          <p class="answer">Dampaknya termasuk naiknya permukaan laut, cuaca ekstrem, mencairnya gletser, hilangnya keanekaragaman hayati, dan ancaman terhadap ketahanan pangan.</p>
-        </div>
-      </div>
+      <form id="feedbackForm" action="https://formsubmit.co/climatecoreteam@gmail.com" method="POST" target="_blank">
+          <input type="hidden" name="_next" value="html/thanks.html">
+          <input type="hidden" name="_captcha" value="false">
 
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
-        <div class="question">4. Bagaimana perubahan iklim memengaruhi manusia, hewan, dan tumbuhan?</div>
-        <div class="answer-container">
-          <p class="answer">Perubahan iklim menyebabkan gelombang panas meningkat, cuaca ekstrem, merusak habitat alami, serta polusi udara.</p>
-        </div>
-      </div>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <textarea name="message" placeholder="Your Feedback" required></textarea>
+          <button type="submit">Send</button>
+      </form>
 
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-        <div class="question">5. Apa itu Jejak Karbon dan apa dampaknya?</div>
-        <div class="answer-container">
-          <p class="answer">Jejak karbon adalah total gas rumah kaca yang dilepaskan oleh aktivitas manusia. Dampaknya meliputi kenaikan suhu, polusi, dan cuaca ekstrem.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
-        <div class="question">6. Apakah mendaur ulang benar-benar membantu perubahan iklim?</div>
-        <div class="answer-container">
-          <p class="answer">Ya, mendaur ulang membantu mengurangi emisi gas rumah kaca, menghemat energi, dan mengurangi kebutuhan ekstraksi bahan alam.</p>
-        </div>
-      </div>
-
+      <p id="statusMsg" class="status-msg">Thanks! Your feedback is saved.</p>
     </div>
   </section>
 
-  <!-- Footer Section, wait where's the section? oh..<footer> -->
+  <!-- Footer Section-->
   <footer class="footer">
     <div class="footer-wrapper">
       <div class="footer-content">
@@ -350,7 +335,7 @@
               <img src="Assets/icons/github.svg" alt="GitHub" class="social-icon">
               GitHub
             </a>
-            <a href="https://instagram.com/YOUR_INSTAGRAM_HERE" target="_blank">
+            <a href="https://instagram.com/..." target="_blank">
               <img src="Assets/icons/instagram.png" alt="Instagram" class="social-icon">
               Instagram
             </a>
