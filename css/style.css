@@ -18,7 +18,7 @@ body {
     background-color: #F0F7F0;
 }
 
-/*Hero section, well yea*/
+/*Hero section*/
 .hero {
     position: relative;
     height: 100vh;
@@ -800,7 +800,6 @@ body {
     box-shadow: 0 0 15px rgba(54, 199, 95, 0.2);
 }
 
-/* Style for the internal buttons (renamed to .faq-btn-internal) */
 .faq-btn-internal {
     display: inline-block;
     padding: 12px 25px;
@@ -808,13 +807,13 @@ body {
     text-decoration: none;
     font-weight: 700;
     font-size: 16px;
-    background: #36C75F; /* Green solid button */
+    background: #36C75F;
     color: #0a0e27;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .faq-btn-internal:hover {
-    background: #4ade80; /* Lighter green on hover */
+    background: #4ade80;
     transform: translateY(-2px);
 }
 
@@ -879,7 +878,7 @@ body {
 .cta-title {
   font-size: 32px;
   font-weight: 1000;
-  color: #226b2f;
+  color: #36C75F;
   margin-bottom: 30px;
   font-family: 'Poppins', sans-serif;
 }

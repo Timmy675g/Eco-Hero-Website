@@ -278,19 +278,17 @@
       </div>  
     </div>
 
-    <div class="contact" id="feedback" data-aos="fade-up" data-aos-delay="0">
+    <div class="contact" id="feedback">
       <h2>Feedback</h2>
 
       <form id="feedbackForm" action="https://formsubmit.co/climatecoreteam@gmail.com" method="POST" target="_blank">
            <input type="hidden" name="_next" value="https://climatehero.netlify.app/html/thanks.html"> <!--though root relative is easier but its also easier to fail than absolute URL which is the safest-->
           <input type="hidden" name="_captcha" value="false">
 
-          <input type="text" name="name" placeholder="Your Name" required>
-          <textarea name="message" placeholder="Your Feedback" required></textarea>
-          <button type="submit">Send</button>
+          <input data-aos="fade-right" type="text" name="name" placeholder="Nama Anda" required>
+          <textarea data-aos="fade-left" name="message" placeholder="Saran Anda" required></textarea>
+          <button type="submit">Kirim</button>
       </form>
-
-      <p id="statusMsg" class="status-msg">Thanks! Your feedback is saved.</p>
     </div>
   </section>
 

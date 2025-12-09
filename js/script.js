@@ -118,13 +118,3 @@ faqItems.forEach((item) => {
     if (!open) item.classList.add('active');
   });
 });
-
-const form = document.getElementById('feedbackForm');
-const statusMsg = document.getElementById('statusMsg');
-
-form.addEventListener('submit', (e) => {
-  statusMsg.style.display = 'block';
-  setTimeout(() => {
-    statusMsg.style.display = 'none';
-  }, 4000);
-});

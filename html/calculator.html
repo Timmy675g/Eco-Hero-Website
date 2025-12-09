@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carbon Calculator</title>
+        <title>Kalkulator Karbon</title>
         <link rel="icon" href="../Assets/icons/Favicon.ico">
         <link rel="stylesheet" href="../css/Calculator.css">
     </head>
@@ -11,8 +11,8 @@
         <div id="Glassy">
             <div id="calc">
                 <button id="backbtn" onclick="window.location.href='../index.html';">Back</button>
-                <h1> Carbon Emission Calculator</h1>
-                <label for="fuel">Fuel types</label>
+                <h1>Kalkulator Emisi Karbonr</h1>
+                <label for="fuel">Jenis Bahan Bakar</label>
                 <select id="fuel" onchange="UpdateUnit()">
                     <option value="Petrol">Gasoline / Petrol</option>
                     <option value="diesel">Diesel</option>
@@ -24,21 +24,21 @@
                     <option value="ev">Electric</option>
                     <option value="other">Other</option>
                 </select>
-                <label for="F-E" id="L_efficiency">Avg Fuel efficiency </label>
+                <label for="F-E" id="L_efficiency">Efisiensi Rata - Rata Bahan Bakar</label>
                 <div class="elabel1">
                     <input type="number" id="F_E" placeholder="ex. 12">
                     <span id="fueltype">Km/L</span>
                 </div>
-                <label for="dist">Distance Travelled using vehicle </label>
+                <label for="dist">Jarak yang ditempuh menggunakan kendaraan</label>
                 <div class="elabel1">
                     <input type="number" id="dist" placeholder="ex. 150">
                     <span id="distance">Km</span>
                 </div>
-                <button onclick="calc1()">Calculate</button>
+                <button onclick="calc1()">Hitung</button>
                 <div id="res1"></div>
             </div>
         </div>
-        <footer>*the calculator result is approximate, result may differ by car and local power grid situations</footer>
+        <footer>*Hasil kalkulator adalah perkiraan, hasil mungkin berbeda tergantung pada situasi mobil dan jaringan listrik setempat</footer>
         <script src="../js/Calculator.js"></script>
     </body>
 </html>

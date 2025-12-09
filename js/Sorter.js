@@ -53,11 +53,11 @@ function drop(o) {
 if (itemType === correctbin) {
   point++
   currentext.textContent = "Score: " + point;
-    wrttext.textContent = "Correct bin :D"
+    wrttext.textContent = "Tempat Sampah yang benar :D"
 } else {
   point = Math.max(0, point - 1);
   currentext.textContent = "Score: " + point;
-  wrttext.textContent = "Wrong bin :("
+  wrttext.textContent = "Salah tempat sampah :("
 }
 const a_variable = [...things1.children].find(d => d.textContent === Emoji2);
 if (a_variable) a_variable.remove();
