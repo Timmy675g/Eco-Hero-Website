@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ev sorter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/ev_car_sorter.css">
+</head>
+<body>
+    <div class="game">
+        <aside class="menu">
+            <h2>Menu</h2>
+            <div class="money-panel">
+                <div class="money">
+                    Money: $<span id="money">0</span>
+                </div>
+                <div class="score-h">
+                    Part built: <span id="pscore">0</span>
+                </div>
+            </div>
+            <div class="economy" title="economic state">
+                <div><b>Economy: </b><span id="economystate">stable</span></div>
+                <div>Price multiplier: <span id="economymulti">1.0x</span></div>
+            </div>
+
+            <div id="upgrade1">Parts upgrade menu -- for better parts and prices</div>
+            <div class="item2" id="multishoplist"></div> <!-- multiplier shop -->
+
+        </aside>
+        <main class="main">
+            <header>
+                <h1>Welcome to EV builder game!!</h1>
+                <div class="topstatsbar">
+                    <div class="stat">Unlocked parts: <strong id="unlockedpartnum">0</strong></div>
+                    <div class="stat">Time: <span id="timedisp">--:--</span></div>
+                </div>
+            </header>
+
+            <section class="board" aria-label="g-board">
+                <div class="toprow">
+                    <div style="flex:1">
+                        <div id="items2" aria-live="polite"></div>
+                    </div>
+                </div>
+
+                <div id="slots">
+                    <div class="slot1" data-accept="battery">
+                        <div><b>Battery</b></div><small>Drop Battery Here</small>
+                    </div>
+                    <div class="slot1" data-accept="motor">
+                        <div><b>Motor</b></div><small>Drop Motor Here</small>
+                    </div>
+                    <div class="slot1" data-accept="brakes">
+                        <div><b>Brakes</b></div><small>Drop Brakes Here</small>
+                    </div>
+                    <div class="slot1" data-accept="wheels">
+                        <div><b>Wheels</b></div><small>Drop Wheels Here</small>
+                    </div>
+                    <div class="slot1" data-accept="suspension">
+                        <div><b>Suspension</b></div><small>Drop Suspension Here</small>
+                    </div>
+                </div>
+
+                <div class="res-area">
+
+                    <div class="Cstage" id="Chid">
+                        <div class="buildStat" id="muted2"></div>
+                    </div>
+
+                </div>
+
+
+            </section>
+            <footer>Ev builder game 2025</footer>
+        </main>
+    </div>
+    <div class="vw-pop" id="vwPop"></div>
+<script src="../js/ev_car_sorter.js"></script>
+</body>
+</html>
+
+
