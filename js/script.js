@@ -118,3 +118,12 @@ faqItems.forEach((item) => {
     if (!open) item.classList.add('active');
   });
 });
+
+window.addEventListener('load', () => {
+    if(window.location.hash === '#cta'){
+        const ctaSection = document.getElementById('cta');
+        if(ctaSection){
+            ctaSection.scrollIntoView({behavior: 'smooth'});
+        }
+    }
+});

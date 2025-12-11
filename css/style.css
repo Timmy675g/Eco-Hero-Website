@@ -1094,11 +1094,20 @@ footer ul {
 }
 
 footer ul li {
-  display: grid;
   margin-left: 20px;
 }
 
 footer ul li a { /* all <a> links inside <li> list inside <ul> those bullet points inside the <footer>*/
   color: white;
   text-decoration: underline;
+}
+
+.sources {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.sources div {
+  width: 45%;
 }

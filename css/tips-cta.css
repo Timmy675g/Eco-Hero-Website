@@ -1,36 +1,57 @@
 body {
     font-family: "Poppins", sans-serif;
-    background: #f7f9fb;
+    background: #f5f8f4;
     margin: 0;
     padding: 0;
 }
 
 .cta-container {
     max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
+    margin: 60px auto;
+    padding: 0 20px;
     display: flex;
     gap: 40px;
+    align-items: flex-start;
 }
 
 .cta-image-box {
     width: 35%;
-    height: 400px;
-    background: #e8f2e8;
-    border-radius: 18px;
-    border: 2px dashed #b6d8b6;
+    height: 420px;
+    background: #e9f5e6;
+    border-radius: 20px;
+    border: 2px dashed #b9d7b3;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    overflow: hidden; /* penting */
+}
+
+.cta-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* penting */
+    display: block;
 }
 
 .cta-card {
     width: 65%;
-    background: #fff;
-    padding: 35px;
-    border-radius: 18px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    background: #ffffff;
+    padding: 40px 38px;
+    border-radius: 20px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.07);
+    line-height: 1.65;
 }
 
 .cta-card h2 {
-    margin-bottom: 15px;
+    font-size: 26px;
+    color: #3c9d47;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cta-card h3 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    color: #2f6840;
 }
 
 .cta-card ul {
@@ -38,5 +59,26 @@ body {
 }
 
 .cta-card ul li {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+    padding-left: 4px;
+}
+
+.cta-card p {
+    margin-bottom: 18px;
+    color: #444;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50; /* eco-green */
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #45a049;
 }
