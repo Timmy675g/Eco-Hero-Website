@@ -1,7 +1,7 @@
 html, body{
     height:100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('../assets/images/back2.jpg');
+    background-image: url('../assets/images/back2.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
@@ -16,6 +16,9 @@ html, body{
 
 #multishoplist {
     margin-top: 8px;
+    scrollbar-width: thin;
+    overflow-y: auto;
+    height: 62vh;
 }
 
 #slots {
@@ -32,12 +35,13 @@ html, body{
     height:98vh;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 
 .menu {
     background-color: rgba(0, 0, 0, 0.504);
     border-radius: 9px;
-    padding: 12px 11px;
+    padding: 10px 11px;
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.362);
     display: flex;
     flex-direction: column;
@@ -80,7 +84,7 @@ html, body{
     display: grid;
     grid-template-columns: 1fr;
     gap: 9px;
-    overflow: hidden;
+    overflow:hidden;
     padding-right: 6px;
     box-sizing: border-box;
 }
@@ -398,4 +402,3 @@ footer {
     object-fit: contain;
     pointer-events: none;
 }
-

@@ -585,8 +585,13 @@ body {
   background-clip: text;
 }
 
+.climate-link {
+  color: darkslategray;
+  text-decoration: underline;
+}
+
 .content-section p {
-  font-size: 15.8px;
+  font-size: 14.8px;
   line-height: 1.8;
   color: #111111;
 }
@@ -684,12 +689,12 @@ body {
   box-shadow: 0 15px 40px rgba(74, 222, 128, 0.15);
 }
 
-#upcoming {
-  background-color: lightgray;
+#ev {
+  background-color: #4D58DB;
 }
 
-#upcoming:hover {
-  background-color: gray;
+#ev:hover {
+  background-color: #444EC2;
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(74, 222, 128, 0.15);
 }

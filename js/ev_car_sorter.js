@@ -27,22 +27,29 @@ const maxUpgrades = {
     wheels:1,
 };
 
+const partNamesID = {
+    motor: "Motor",
+    battery: "Baterai",
+    brakes: "Rem",
+    suspension: "Suspensi",
+    wheels: "Roda"
+};
 
 const tLabel = {
-    motor: ["Single motor","Single Performance motor","Dual motor","Dual Performance motor","Tri motor","Tri Performance motor","Quad motor","Quad Performance motor"],
-    battery: ["Standard 50Kwh","Long range 75Kwh","Signature 100Kwh"],
-    brakes: ["Drum brakes","Plate brakes","High regen plate brakes"],
-    suspension: ["Cheap Standard","Eco Comfort","Signature luxury"],
-    wheels: ["wheels","Performance wheels"]
+    motor: ["Motor Tunggal","Motor Tunggal Performa","Motor Ganda","Motor Ganda Performa","Motor Tiga","Motor Tiga Performa","Motor Quad","Motor Quad Performa"],
+    battery: ["Standar 50Kwh","Jarak Jauh 75Kwh","Signature 100Kwh"],
+    brakes: ["Rem Drum","Rem Plat","Rem Plat High Regen"],
+    suspension: ["Standar Murah","Eco Comfort","Luxury Signature"],
+    wheels: ["Roda","Roda Performa"]
 };
 
 const bShopPrices = { motor:50, battery:40, brakes:30,suspension:30, wheels:20};
 const bComponentCosts = { motor:12, battery:11, brakes:9,suspension:9, wheels:6};
 
 const eStates = [
-    { name:"Growth", multi:1.25, shopmulti:1.05, cheapBoost:0.95, exPenalty:1.05, duration:20000},
-    { name:"Stable", multi:1.00, shopmulti:1.00, cheapBoost:1.00, exPenalty:1.00, duration:18000},
-    { name:"Crisis", multi:0.75, shopmulti:0.90, cheapBoost:1.10, exPenalty:0.80, duration:22000},
+    { name:"Pertumbuhan", multi:1.25, shopmulti:1.05, cheapBoost:0.95, exPenalty:1.05, duration:20000},
+    { name:"Stabil", multi:1.00, shopmulti:1.00, cheapBoost:1.00, exPenalty:1.00, duration:18000},
+    { name:"Krisis", multi:0.75, shopmulti:0.90, cheapBoost:1.10, exPenalty:0.80, duration:22000},
 ];
 
 let currentE = 1;
@@ -106,7 +113,7 @@ function renderShop() {
         cardV.innerHTML =
         `<div class="part-thumb">${thumbImg(type, upgrades[type])}</div>
         <div class="part-meta">
-        <h4>${type.charAt(0).toUpperCase() + type.slice(1)}</h4>
+        <h4>${partNamesID[type]}</h4>
         <p class="current-tier">
         ${tLabel[type][Math.min(upgrades[type], tLabel[type].length -1)] || 'Basic'}
         </p>
@@ -115,7 +122,7 @@ function renderShop() {
         <div class="part-actions">
         <div style="display:flex;gap:6px;align-items:center">
         <button class="buy-btn" data-type="${type}">
-        <span class="btn-label">Buy/Upgrade</span>
+        <span class="btn-label">Beli/Upgrade</span>
         <span class="btn-price">($<span class="price">${shopPriceFor(type)}</span>)</span>
         </button>
         <button class="tier-toggle" data-type="${type}">▼</button>
@@ -155,13 +162,13 @@ function renderShop() {
                 renderShop();
                 uiUpdate();
 
-                sPopupV(`${type.charAt(0).toUpperCase()+ type.slice(1)} upgraded!! -$${price}`);
+                sPopupV(`${type.charAt(0).toUpperCase()+ type.slice(1)} di-upgrade!! -$${price}`);
 
             } else {
                 if(upgrades[type] >= maxUpgrades[type]) {
-                    sPopupV('Max upgrades reached for ' + type);
+                    sPopupV('Upgrade maksimal tercapai untuk ' + type);
                 } else {
-                    sPopupV('Not enough money for ' + type);
+                    sPopupV('Uang tidak cukup untuk ' + type);
                 }
             }
         });
@@ -252,7 +259,7 @@ document.querySelectorAll(".slot1").forEach(slot => {
 
         if (slot.dataset.accept === dataV.type && !slot.classList.contains("filled")) {
             slot.classList.add("filled");
-            slot.innerHTML= `<div><b>${dataV.label}</b></div><small>-${dataV.type}-</small>`;
+            slot.innerHTML= `<div><b>${dataV.label}</b></div><small>${partNamesID[dataV.type]}</small>`;
             score++;
 
             ScoreV.textContent = score;
@@ -262,7 +269,7 @@ document.querySelectorAll(".slot1").forEach(slot => {
                 FBuildcomplete();
             }
         } else {
-            sPopupV("Wrong part!")
+            sPopupV("Salah Bagian!")
         }
     });
 });
@@ -287,10 +294,10 @@ function FBuildcomplete () {
     const labelB = document.getElementById("muted2");
     let dotsV = 0;
 
-    labelB.textContent = "Building EV";
+    labelB.textContent = "Membangun EV";
     const loopV = setInterval(() => {
         dotsV = (dotsV + 1)%4;
-        labelB.textContent = "Building EV" + ".".repeat(dotsV);
+        labelB.textContent = "Membangun EV" + ".".repeat(dotsV);
     },400);
 
     const baseV = 100;
@@ -306,7 +313,7 @@ function FBuildcomplete () {
 
     setTimeout(() => {
         clearInterval(loopV);
-        sPopupV (`EV Sold! +$${earnedV}`);
+        sPopupV (`EV Dijual! +$${earnedV}`);
         money += earnedV;
         uiUpdate();
         Slotreset();
@@ -324,7 +331,7 @@ function Slotreset () {
     document.querySelectorAll(".slot1").forEach(slot => {
         slot.classList.remove("filled");
         const o = slot.dataset.accept;
-        slot.innerHTML = `<div><b>${o}</b></div><small>drop ${o} here </small>`;
+        slot.innerHTML = `<div><b>${o}</b></div><small>seret ${o} kesini </small>`;
     });
 }
 
@@ -357,4 +364,4 @@ renderShop();
 uiUpdate();
 FeconomyCycle();
 
-sPopupV("Welcome to EV builder game!!!")
+sPopupV("Selamat datang di permainan EV Builder!!!")

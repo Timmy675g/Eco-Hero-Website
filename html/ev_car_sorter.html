@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <title>Ev sorter</title>
+    <title>Ev Sorter</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/ev_car_sorter.css">
+    <link rel="icon" href="../Assets/icons/Favicon.ico">
 </head>
 <body>
     <div class="game">
@@ -12,27 +13,27 @@
             <h2>Menu</h2>
             <div class="money-panel">
                 <div class="money">
-                    Money: $<span id="money">0</span>
+                    Uang: $<span id="money">0</span>
                 </div>
                 <div class="score-h">
-                    Part built: <span id="pscore">0</span>
+                    Bagian Dibangun: <span id="pscore">0</span>
                 </div>
             </div>
             <div class="economy" title="economic state">
-                <div><b>Economy: </b><span id="economystate">stable</span></div>
-                <div>Price multiplier: <span id="economymulti">1.0x</span></div>
+                <div><b>Ekonomi: </b><span id="economystate">Stabil</span></div>
+                <div>Pengali Harga: <span id="economymulti">1.0x</span></div>
             </div>
 
-            <div id="upgrade1">Parts upgrade menu -- for better parts and prices</div>
+            <div id="upgrade1">Menu Upgrade Bagian -- untuk parts dan harga lebih baik</div>
             <div class="item2" id="multishoplist"></div> <!-- multiplier shop -->
 
         </aside>
         <main class="main">
             <header>
-                <h1>Welcome to EV builder game!!</h1>
+                <h1>Selamat datang di permainan EV Builder!!!</h1>
                 <div class="topstatsbar">
-                    <div class="stat">Unlocked parts: <strong id="unlockedpartnum">0</strong></div>
-                    <div class="stat">Time: <span id="timedisp">--:--</span></div>
+                    <div class="stat">Parts yang Dibuka: <strong id="unlockedpartnum">0</strong></div>
+                    <div class="stat">Waktu: <span id="timedisp">--:--</span></div>
                 </div>
             </header>
 
@@ -45,38 +46,32 @@
 
                 <div id="slots">
                     <div class="slot1" data-accept="battery">
-                        <div><b>Battery</b></div><small>Drop Battery Here</small>
+                        <div><b>Baterai</b></div><small>Seret Baterai ke Sini</small>
                     </div>
                     <div class="slot1" data-accept="motor">
-                        <div><b>Motor</b></div><small>Drop Motor Here</small>
+                        <div><b>Motor</b></div><small>Seret Motor ke Sini</small>
                     </div>
                     <div class="slot1" data-accept="brakes">
-                        <div><b>Brakes</b></div><small>Drop Brakes Here</small>
+                        <div><b>Rem</b></div><small>Seret Rem ke Sini</small>
                     </div>
                     <div class="slot1" data-accept="wheels">
-                        <div><b>Wheels</b></div><small>Drop Wheels Here</small>
+                        <div><b>Roda</b></div><small>Seret Roda ke Sini</small>
                     </div>
                     <div class="slot1" data-accept="suspension">
-                        <div><b>Suspension</b></div><small>Drop Suspension Here</small>
+                        <div><b>Suspensi</b></div><small>Seret Suspensi ke Sini</small>
                     </div>
                 </div>
 
                 <div class="res-area">
-
                     <div class="Cstage" id="Chid">
                         <div class="buildStat" id="muted2"></div>
                     </div>
-
                 </div>
-
-
             </section>
-            <footer>Ev builder game 2025</footer>
+            <footer>Permainan EV Builder 2025</footer>
         </main>
     </div>
     <div class="vw-pop" id="vwPop"></div>
 <script src="../js/ev_car_sorter.js"></script>
 </body>
 </html>
-
-
