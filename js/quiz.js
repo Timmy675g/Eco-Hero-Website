@@ -4,29 +4,44 @@ let selectedAnswer = null;
 
 const quizData = [
   {
-    question: "What is the primary greenhouse gas responsible for global warming?",
-    options: ["A. Oxygen", "B. Carbon Dioxide", "C. Nitrogen", "D. Hydrogen"],
+    question: "Gas rumah kaca apa yang menjadi penyebab utama pemanasan global?",
+    options: ["A. Oksigen", "B. Karbon Dioksida", "C. Nitrogen", "D. Hidrogen"],
     correct: 1
   },
   {
-    question: "Which renewable energy source uses the sun's energy?",
-    options: ["A. Wind Power", "B. Solar Power", "C. Hydroelectric Power", "D. Geothermal Power"],
+    question: "Sumber energi terbarukan manakah yang menggunakan energi matahari?",
+    options: ["A. Tenaga Surya", "B. Tenaga Angin", "C. Pembangkit Listrik Tenaga Air", "D. Tenaga Panas Bumi"],
+    correct: 0
+  },
+  {
+    question: "Apa penyebab utama naiknya permukaan air laut?",
+    options: ["A. Arus Laut", "B. Pencairan Lapisan Es", "C. Gunung berapi bawah air", "D. Kehidupan laut"],
     correct: 1
   },
   {
-    question: "What is the main cause of rising sea levels?",
-    options: ["A. Ocean currents", "B. Melting ice caps", "C. Underwater volcanoes", "D. Marine life"],
-    correct: 1
-  },
-  {
-    question: "Which gas makes up most of Earth's atmosphere?",
-    options: ["A. Oxygen", "B. Carbon Dioxide", "C. Nitrogen", "D. Argon"],
+    question: "Gas apakah yang membentuk sebagian besar atmosfer Bumi?",
+    options: ["A. Oksigen", "B. Carbon Dioksida", "C. Nitrogen", "D. Argon"],
     correct: 2
   },
   {
-    question: "What percentage of Earth's surface is covered by water?",
-    options: ["A. 50%", "B. 60%", "C. 71%", "D. 85%"],
+    question: "Berapa persentase permukaan Bumi yang tertutupi oleh air?",
+    options: ["A. 60%", "B. 63%", "C. 85%", "D. 71%"],
     correct: 2
+  },
+  {
+    question: "Apa salah satu solusi perubahan iklim?",
+    options: ["A. Migrasi", "B. Mitigasi", "C. Imigrasi", "D. Membakar lebih banyak fosil"],
+    correct: 1
+  },
+  {
+    question: "Dari mana datangnya emisi karbondioksida?",
+    options: ["A. Sumber Alami dan Sumber Angkasa ", "B. Sumber Alami dan Sumber Hewan", "C. Sumber Alami dan Sumber Buatan Manusia", "D. Sumber Buatan Manusia dan Sumber Hewan"],
+    correct: 2
+  },
+  {
+    question: "Berapa persentase kenaikan suhu global sejak era pra-industri?",
+    options: ["A. 1.4°C", "B. 1.5°C", "C. 1.6°C", "D. 2.0°C"],
+    correct: 0
   }
 ];
 
@@ -96,13 +111,13 @@ function showResults() {
   const messageEl = document.getElementById('result-message');
 
   if (percentage >= 80) {
-    messageEl.textContent = "🌟 Awesome! You're a true climate champ!";
+    messageEl.textContent = "🌟 Mantap! Pahlawan Iklim beneran nih!";
   } else if (percentage >= 60) {
-    messageEl.textContent = "💚 Nice work! You know your climate facts!";
+    messageEl.textContent = "💚 Bagus! Kamu tau tentang fakta-fakta iklim!";
   } else if (percentage >= 40) {
-    messageEl.textContent = "🌱 Not bad! Keep learning about our planet!";
+    messageEl.textContent = "🌱 Lumayan! Ayo, belajar lebih banyak tentang planet kita!";
   } else {
-    messageEl.textContent = "🌍 Keep exploring! Failure is absolutely necessary to achieve greatness—every step of learning helps protect our planet.";
+    messageEl.textContent = "🌍 Teruslah bereksplorasi! Kegagalan diperlukan untuk mencapai kehebatan! setiap langkah pembelajaran membantu melindungi planet kita!";
   }
 }
 
