@@ -1,7 +1,7 @@
 html, body{
     height:100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url('../assets/images/back2.jpg');
+    background-image: url('../Assets/images/back2.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
@@ -403,3 +403,28 @@ footer {
     pointer-events: none;
 }
 
+
+#backbtn{
+    width: 30%;
+    padding: 12px 24px;
+    box-sizing: border-box;
+    background-color: black;
+    margin: 10px auto;
+    border: none;
+    color:azure;
+    border-radius:18px;
+    transition: 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#backbt:hover {
+    transform: scale(1.02);
+    background-color:#343a40;
+
+}
+
+#backbt:active {
+    transform: scale(1.07);
+    border-radius: 22px;
+    background-color: #495057;
+
+}
