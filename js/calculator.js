@@ -23,7 +23,7 @@ function calc1() {
     const Rdiv = document.getElementById("res1");
     box.style.display = 'block';
     if (!efficiency || !distance || efficiency <=0 || distance <=0) {
-        Rdiv.innerText= "Invalid Number, Try again!";
+        Rdiv.innerText= "Angka Invalid! Coba Lagi!";
         return;
     }
     const CoFactors = {
@@ -42,8 +42,8 @@ function calc1() {
     const co = usage1 * CoFactors[U_fuel];
 
     Rdiv.innerHTML = `
-    <p><b>Information !!</b></p>
-    <p>Fuel Used:  ${usage1.toFixed(2)} ${u1}</p>
-    <p>Total Co₂ emitted: ${co.toFixed(2)} kg</p>`;
+    <p><b>Informasi !!</b></p>
+    <p>Bensin Digunakan:  ${usage1.toFixed(2)} ${u1}</p>
+    <p>Total Co₂: ${co.toFixed(2)} kg</p>`;
 
 }
