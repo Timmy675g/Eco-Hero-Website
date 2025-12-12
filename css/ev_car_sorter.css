@@ -416,13 +416,13 @@ footer {
     transition: 0.2s ease;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#backbt:hover {
+#backbtn:hover {
     transform: scale(1.02);
     background-color:#343a40;
 
 }
 
-#backbt:active {
+#backbtn:active {
     transform: scale(1.07);
     border-radius: 22px;
     background-color: #495057;
