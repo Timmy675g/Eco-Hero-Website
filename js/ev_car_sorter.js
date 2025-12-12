@@ -43,6 +43,14 @@ const tLabel = {
     wheels: ["Roda","Roda Performa"]
 };
 
+const slotLabels = {
+    motor: "Motor",
+    battery: "Baterai",
+    brakes: "Rem",
+    suspension: "Suspensi",
+    wheels: "Roda"
+};
+
 const bShopPrices = { motor:50, battery:40, brakes:30,suspension:30, wheels:20};
 const bComponentCosts = { motor:12, battery:11, brakes:9,suspension:9, wheels:6};
 
@@ -331,7 +339,7 @@ function Slotreset () {
     document.querySelectorAll(".slot1").forEach(slot => {
         slot.classList.remove("filled");
         const o = slot.dataset.accept;
-        slot.innerHTML = `<div><b>${o}</b></div><small>seret ${o} kesini </small>`;
+        slot.innerHTML = `<div><b>${slotLabels[o]}</b></div><small>Seret ${slotLabels[o]} ke sini</small>`;
     });
 }
 
