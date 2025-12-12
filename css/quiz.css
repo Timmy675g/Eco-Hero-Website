@@ -40,6 +40,21 @@ body {
   scrollbar-width: none; 
 }
 
+#backbtn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #219e6c; /* eco-green */
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#backbtn:hover {
+    background-color: #1d895e;
+}
+
 #quiz-container::before {
   position: absolute;
   top: 0;
@@ -260,6 +275,25 @@ body {
 }
 
 #restart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: rgba(102, 126, 234, 0.4);
+}
+
+#backbtn-end {
+  margin-top: 32px;
+  padding: 16px 48px;
+  background: linear-gradient(#667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: rgba(102, 126, 234, 0.3);
+}
+
+#backbtn-end {
   transform: translateY(-2px);
   box-shadow: rgba(102, 126, 234, 0.4);
 }

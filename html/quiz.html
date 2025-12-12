@@ -8,6 +8,7 @@
 <body>
   <div id="quiz-wrapper">
     <div id="quiz-container">
+      <button id="backbtn" onclick="window.location.href='../index.html#games';">Back</button>
       <div class="quiz-header">
         <h2>🌍 Kuis Perubahan Iklim</h2>
         <div class="question-counter">
@@ -23,12 +24,13 @@
     </div>
 
     <div id="result" style="display:none;">
-      <h2>Quiz Complete!</h2>
+      <h2>Quiz Selesai!</h2>
       <div class="score-circle">
-        <div class="score-text"><span id="score">0</span>/<span id="total">5</span></div>
+        <div class="score-text"><span id="score">0</span>/<span id="total">8</span></div>
       </div>
       <div class="result-message" id="result-message"></div>
-      <button id="restart-btn">Take Quiz Again</button>
+      <button id="restart-btn">Ulang Quiz Lagi</button>
+      <button id="backbtn-end" onclick="window.location.href='../index.html#games';">Kembali ke beranda mini games</button>
     </div>
   </div>
 </body>
