@@ -1,36 +1,47 @@
-# 👥 Team Guide — Eco Heroes Website Project
+# Be An Eco Hero!
 
-Welcome teammates! 👋  
-This guide explains **how we work together** on this project using Git + VS Code.
+#### This project is made by the **ClimateCore** Team
 
----
+***
 
-## ✅ Before You Start
-Make sure you have installed:
-- ✔️ Git
-- ✔️ VS Code
-- ✔️ Live Server Extension
+**Live Website** [https://climatecore.netlify.app/]
+**Website Status** [![Netlify Status](https://api.netlify.com/api/v1/badges/7d0d6bd4-1ed0-4da4-9564-0c7b5fcccd5c/deploy-status)])
 
----
+## 1. Project Overview :
+**"Be An Eco Hero!"** adalah platform edukasi yang dikembangkan oleh tim **ClimateCore** untuk mengatasi kerendahan kesadaran terhadap isu perubahan iklim.
+Kami fokus mengajak para generasi muda untuk mengambil **Aksi Nyata** melalui pendekatan modern, menjadikan setiap pengunjung sebagai **Eco Hero** dalam upaya melestarikan lingkungan.
 
-## 📥 How to Download the Project (First Time Only) and Contributor :
-1️⃣ Open any folder on your laptop  
-2️⃣ Right-click → "Open in Terminal" (or use VS Code Terminal)  
-3️⃣ Run this command:
+### 2. Tujuan Utama :
+- Meningkatkan kesadaran isu - isu iklim
+- Menyediakan informasi edukatif yang mudah diakses.
+- Mendorong partisipasi aktif dalam aksi hijau 
 
-## Notice! 
-Some notes are scattered in css folder! some is used for CSS Tips and how the code works, gotta have a documenting notes and stuff you know :]
+## 3. Fitur dan Konten Utama :
+**Introduction** : Penjelasan dasar perubahan iklim. 
+**About** : Informasi Tim ClimateCore. 
+**Mini Games** : Kuis Iklim, Kalkulator Karbon, Penyortir Sampah, dan Permainan Merakit Mobil Listrik (EV). 
+**Action** : Misi, tips harian, dan sumber pengetahuan lanjutan. 
+**FAQ** : Pertanyaan umum seputar website dan isu iklim. 
 
-```bash
-git clone https://github.com/Timmy675g/Eco-Hero-Website.git
-How to Update & Work on the Project :
-1. git pull
-2. git fetch
-3. git merge
-4. git add .
-5. git commit -m "Whatevery you want for the name"
-6. git push
+## 4. Teknologi yang digunakan :
+Projek ini dibangun menggunakan *Frontend* murni jadi tidak ada backend :
 
-simple notes, please contact me on what you want to add alright? :) 
-( For Contributors )
-- Dearest Timmy :)
+**Frontend** : HTML, CSS, JavaScript
+**Hosting** : Netlify
+
+## 5. ClimateCore Team :
+**Lionel Timothy Tarigan** : Lead Website Developer & Maintainer
+**Michelangelo Kamil** : Website, Designer & Mini Games Developer
+**Jeffry Silalahi, S.Pd.** : Guru Pembimbing
+
+## 6. 🚀 Menjalankan Secara Lokal
+Untuk menjalankan proyek ini, *clone* repository ini, masuk ke direktori proyek, dan buka file **`index.html`** langsung di browser Anda.
+
+1.  **Clone Repo:** `git clone [https://github.com/michelangelokamil-source/Eco-Hero-Website.git]`
+2.  **Akses:** Buka `index.html`.
+
+> **NOTICE DATA ASSET:** Data Asset disini bersifat non-copyright, Icon diambil dari *IconScout dan Icon8 dan sebagian dibuat oleh Designer tim kami*, Gambar diambil dari website gambar non-copyright seperti *Unsplash, Pexels, dan Pixabay!* dan gambar orang seperti *Greta Thunberg dan Ilyess El Korbi diambil dari WikiMedia Commons* dan digunakan untuk website edukasi.
+
+> **NOTICE DATA INFORMASI:** Data Informasi disini diambil dari data International seperti *NASA, NOAA, CarbonBrief* dan lain-lain dan setiap sumber data sudah dicantumkan di Footer maupun dibawah datanya langsung!.
+
+> **NOTICE README.md:** README.md akan di update ke bahasa *Inggris* setelah kompetisi selesai sebagai dokumentasi International.
