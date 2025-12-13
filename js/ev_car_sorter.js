@@ -13,7 +13,7 @@ Object.defineProperty (window, "money", {
 
 let upgrades = {
     motor:0,
-    battery:0,
+    battery:0,    /*level dasar*/
     brakes:0,
     suspension:0,
     wheels:0,
@@ -22,14 +22,14 @@ let upgrades = {
 const maxUpgrades = {
     motor:7,
     battery:2,
-    brakes:2,
+    brakes:2,     /*level maximal per item*/
     suspension:2,
     wheels:1,
 };
 
 const partNamesID = {
     motor: "Motor",
-    battery: "Baterai",
+    battery: "Baterai", /*nama item*/
     brakes: "Rem",
     suspension: "Suspensi",
     wheels: "Roda"
@@ -40,7 +40,7 @@ const tLabel = {
     battery: ["Standar 50Kwh","Jarak Jauh 75Kwh","Signature 100Kwh"],
     brakes: ["Rem Drum","Rem Plat","Rem Plat High Regen"],
     suspension: ["Standar Murah","Eco Comfort","Luxury Signature"],
-    wheels: ["Roda","Roda Performa"]
+    wheels: ["Roda","Roda Performa"] /*Label item per level*/
 };
 
 const slotLabels = {
@@ -51,13 +51,13 @@ const slotLabels = {
     wheels: "Roda"
 };
 
-const bShopPrices = { motor:50, battery:40, brakes:30,suspension:30, wheels:20};
-const bComponentCosts = { motor:12, battery:11, brakes:9,suspension:9, wheels:6};
+const bShopPrices = { motor:50, battery:40, brakes:30,suspension:30, wheels:20}; /* harga dasar shop*/
+const bComponentCosts = { motor:12, battery:11, brakes:9,suspension:9, wheels:6}; /* harga dasar komponen*/
 
 const eStates = [
     { name:"Pertumbuhan", multi:1.25, shopmulti:1.05, cheapBoost:0.95, exPenalty:1.05, duration:20000},
     { name:"Stabil", multi:1.00, shopmulti:1.00, cheapBoost:1.00, exPenalty:1.00, duration:18000},
-    { name:"Krisis", multi:0.75, shopmulti:0.90, cheapBoost:1.10, exPenalty:0.80, duration:22000},
+    { name:"Krisis", multi:0.75, shopmulti:0.90, cheapBoost:1.10, exPenalty:0.80, duration:22000}, /*ekonomi*/
 ];
 
 let currentE = 1;
@@ -90,7 +90,7 @@ function countUnlocked() {
 }
 
 function sPopupV(msg) {
-    const p1V = document.createElement("div");
+    const p1V = document.createElement("div");  /*popup dalam html*/
     p1V.className = "pop"
     p1V.textContent = msg;
 
@@ -155,7 +155,7 @@ function renderShop() {
         const toggleBtn = cardV.querySelector('.tier-toggle')
         toggleBtn.addEventListener('click', () => {
             tiersV.classList.toggle('visible');
-            toggleBtn.textContent = tiersV.classList.contains('visible') ? '▲' : '▼';
+            toggleBtn.textContent = tiersV.classList.contains('visible') ? '▲' : '▼'; /* buka menu list upgrade*/
         });
 
         const buyBtn = cardV.querySelector('.buy-btn');
@@ -192,7 +192,7 @@ function renderShop() {
 
 function thumbImg(type, level) {
     if(type==='battery'){
-        const hue = level *-90
+        const hue = level *-90  
         return `<img src="../assets/images/${type}.png" class="pimg" style="filter: hue-rotate(${hue}deg);">`;
     }
     if(type==='motor'){
@@ -231,7 +231,7 @@ function rComponent() {
 
         item.addEventListener("dragstart", e => {
             item.classList.add("dragging");
-            e.dataTransfer.setData("text/plain", JSON.stringify({
+            e.dataTransfer.setData("text/plain", JSON.stringify({   /* fungsi item*/
                 type,label
             }));
         });
@@ -267,7 +267,7 @@ document.querySelectorAll(".slot1").forEach(slot => {
 
         if (slot.dataset.accept === dataV.type && !slot.classList.contains("filled")) {
             slot.classList.add("filled");
-            slot.innerHTML= `<div><b>${dataV.label}</b></div><small>${partNamesID[dataV.type]}</small>`;
+            slot.innerHTML= `<div><b>${dataV.label}</b></div><small>${partNamesID[dataV.type]}</small>`;/*nama item + fungsi item*/
             score++;
 
             ScoreV.textContent = score;
