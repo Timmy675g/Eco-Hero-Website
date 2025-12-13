@@ -79,15 +79,15 @@ function scrollStats(direction) {
     behavior: 'smooth'
   });
   
-  // Update buttons after scroll animation finishes
+  // Updates buttons after scroll animation finishes
   setTimeout(updateNavButtons, 350);
 }
 
-// Listen for scroll events on the slider to update button visibility
+// listen for scroll events on the slider to update button visibility
 const slider = document.querySelector('.stats-slider');
 if (slider) {
   slider.addEventListener('scroll', updateNavButtons);
-  // Initial check on page load
+  // initial check on page load
   updateNavButtons();
 }
 
